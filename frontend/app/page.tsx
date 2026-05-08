@@ -6,7 +6,7 @@ import BuildTrust from "./component/Home/BuildTrust";
 import Dream from "./component/Home/Dream";
 import Facility from "./component/Home/Facility";
 import Vegas from "./component/Home/Vegas";
-import Signature from "./component/Home/signature";
+import Signature from "./component/common/Signature";
 import Manshagroup from "./component/Home/Manshagroup";
 import Investment from "./component/Home/Investment";
 import Faq from "./component/Home/Faq";
@@ -26,7 +26,7 @@ export default function Home() {
       <Dream />
       <Facility />
       <Vegas />
-      <Signature />
+     <Signature/>
       <Manshagroup />
       <Investment />
       <Faq />

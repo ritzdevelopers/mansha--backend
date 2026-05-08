@@ -5,7 +5,7 @@ import Brandsection from '../component/common/Brandsection'
 import Gallery from "../component/commerical/Gallery";
 import Bank from '../component/commerical/Bank'
 import Footer from '../component/Home/Footer'
-import Everything from '../component/commerical/Everything'
+import Everything from '../component/common/Everything'
 import FAQCommerical from '../component/commerical/FAQCommerical'
 import TestimoniaCommon from '../component/common/Testimonia-common'
 import Workplace from '../component/commerical/Workplace'
