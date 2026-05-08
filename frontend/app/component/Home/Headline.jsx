@@ -15,6 +15,7 @@ const Headline = () => {
               <span className="font-normal text-black"> Goes Here</span>
             </span>
           </h1>
+          {/* rounded-full border border-[#652A27] */}
 
           <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:w-auto lg:max-w-xl lg:shrink-0 lg:justify-end lg:gap-[80px]">
             <p className="font-['Arial',Helvetica,sans-serif] text-[clamp(1.125rem,2vw+0.5rem,30px)] font-normal not-italic leading-none tracking-normal text-[#111111]">
@@ -24,7 +25,7 @@ const Headline = () => {
             {/* hover:translate-x-0 */}
             <Link
   href="#contact"
-  className="group relative inline-flex w-fit items-center gap-4 overflow-hidden rounded-full border border-[#652A27] px-5 py-[10px] text-[#652A27] transition-colors duration-300"
+  className="group relative inline-flex w-fit items-center gap-4 overflow-hidden px-5 py-[10px] text-[#652A27] transition-colors duration-300 rounded-full border border-[#652A27] "
 >
   {/* Background Animation */}
   <span className="absolute inset-0 -translate-x-full bg-[#652A27] transition-transform duration-300 group-hover:translate-x-0 group-focus-visible:translate-x-0 group-active:translate-x-0"></span>
