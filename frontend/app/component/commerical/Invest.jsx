@@ -1,0 +1,83 @@
+"use client";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+
+const INVEST_SLIDES = [
+  "/mansha-image/invest-slider-1.png",
+  "/mansha-image/invest-slider-1.png",
+  "/mansha-image/invest-slider-1.png",
+  "/mansha-image/invest-slider-1.png",
+];
+
+const Invest = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % INVEST_SLIDES.length);
+    }, 2800);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <section className="w-full pb-[35px] lg:pb-[70px]">
+      <div className="mx-auto max-w-[1525px] px-5 sm:px-8 lg:px-[70px]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8 xl:grid-cols-[1.15fr_0.85fr] xl:gap-10">
+          <div className="-ml-5 bg-[#F7F7F7] px-4 py-7 pl-5 sm:-ml-8 sm:px-6  sm:pl-8 lg:-ml-[70px] lg:px-8 xl:py-[100px] lg:py-[50px] lg:pl-[70px]">
+            <h2 className="font-optima text-[28px] font-medium leading-[100%] tracking-[0] capitalize text-[#111111] md:text-[32px] lg:text-[28px] xl:text-[36px] text-center md:text-left">
+              Why To Invest In Vega Street
+            </h2>
+            <p className="mt-2 md:mt-6 font-montserrat text-[16px] font-normal xl:max-w-[700px] lg:max-w-[500px] leading-[28px] tracking-[0px] capitalize text-[#333333] text-center md:text-left">
+              Vega Street is thoughtfully designed to offer the perfect blend of
+              location, visibility, and modern infrastructure, making it an ideal
+              destination for businesses and investors alike. With excellent
+              connectivity, high footfall potential, and contemporary commercial
+              spaces, it presents a promising opportunity for long-term growth,
+              strong returns, and a thriving business environment.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[12px_12px_0px_0px] bg-white">
+            <div
+              className="flex transition-transform duration-700 ease-out"
+              style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+            >
+              {INVEST_SLIDES.map((src, idx) => (
+                <div
+                  key={`${src}-${idx}`}
+                  className="relative h-[240px] w-full shrink-0 overflow-hidden  sm:h-[300px] lg:h-[300px]"
+                >
+                  <Image
+                    src={src}
+                    alt="Investment slider visual"
+                    fill
+                    className="rounded-[12px 12px 0px 0px] object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="mx-auto max-w-[328px] px-4 pb-2 pt-4 text-center font-montserrat text-[16px] font-medium leading-[23px] tracking-[0px] capitalize text-black lg:pt-3">
+              Just 2 Minutes Drive to Delhi-Mumbai Expressway
+            </p>
+            <div className="mt-3 flex justify-center gap-1.5 pb-3 lg:absolute lg:bottom-3 lg:left-1/2 lg:z-10 lg:mt-0 lg:-translate-x-1/2 lg:pb-0">
+              {INVEST_SLIDES.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  aria-label={`Go to investment slide ${idx + 1}`}
+                  onClick={() => setActiveSlide(idx)}
+                  className={`h-2 rounded-full transition-all cursor-pointer ${
+                    activeSlide === idx ? "w-8 bg-[#333333]" : "w-2 bg-[#333333]/45"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Invest;

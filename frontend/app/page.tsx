@@ -13,6 +13,8 @@ import Faq from "./component/Home/Faq";
 import Testiimonial from "./component/Home/Testiimonial";
 import Consultation from "./component/Home/Consultation";
 import Footer from "./component/Home/Footer";
+import TestimoniaCommon from "./component/common/Testimonia-common";
+import ConsultationCommon from "./component/common/Consultation-common";
 export default function Home() {
   return (
     <div>
@@ -28,8 +30,10 @@ export default function Home() {
       <Manshagroup />
       <Investment />
       <Faq />
-      <Testiimonial />
-      <Consultation />
+      {/* <Testiimonial /> */}
+      <TestimoniaCommon />
+      {/* <Consultation /> */}
+      <ConsultationCommon />
       <Footer />
     </div>
   );

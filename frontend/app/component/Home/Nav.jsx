@@ -9,7 +9,6 @@ const PHONE_TEXT = "+91 98765 43210";
 const EMAIL = "mailto:info@manshagroup.in";
 const EMAIL_TEXT = "info@manshagroup.in";
 const WHATSAPP = "https://wa.me/919876543210";
-const NAV_ITEMS = ["Home", "About", "Contact", " Carrers", "Blogs"];
 
 const iconBtn =
   "inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-md text-[#2c2c2a] transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2c2c2a]/40 active:opacity-60";
@@ -17,6 +16,12 @@ const iconBtn =
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [showFixedNav, setShowFixedNav] = useState(false);
+
+  const sidebarLinkClass = `optima-menu-link mobile-nav-item-link block cursor-pointer text-[30px] text-black ${
+    open ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
+  }`;
+  const sidebarLabelClass =
+    "transition-colors duration-150 ease-out hover:text-[#652A27]";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,6 +95,7 @@ const Navbar = () => {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
+              // onClick={()=>setOpen((prev)=>!prev)}
               className={iconBtn}
               aria-label="WhatsApp"
                // onClick={() => setOpen((prev) => !prev)}
@@ -101,8 +107,7 @@ const Navbar = () => {
               className="inline-flex cursor-pointer h-11 w-11 items-center justify-center text-[#2c2c2a] transition-opacity  active:opacity-60"
               aria-controls="mobile-navigation"
               aria-expanded={open}
-              aria-label={open ? "Close menu" : "Open menu"}
-      onClick={()=>setOpen((prev)=>!prev)}
+             onClick={()=>setOpen((prev)=>!prev)}
             >
               <Image src="/mansha-svg/humburger-sanskar.svg" width={22} height={22} alt="menu" className="brightness-0" />
             </button>
@@ -138,24 +143,66 @@ const Navbar = () => {
         </div>
         <nav className="mt-8" aria-label="Sidebar menu">
           <ul className="space-y-5 md:space-y-8 pl-2">
-            {NAV_ITEMS.map((item, index) => (
-              <li key={`mobile-${item}`}>
-                <a
-                  href="#"
-                  onClick={() => setOpen(false)}
-                  className={`optima-menu-link mobile-nav-item-link block cursor-pointer text-[30px] text-black ${
-                    open ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-                  }`}
-                  style={{
-                    transitionDelay: open ? `${200 + index * 120}ms` : "0ms",
-                  }}
-                >
-                  <span className="transition-colors duration-150 ease-out hover:text-[#652A27]">
-                    {item}
-                  </span>
-                </a>
-              </li>
-            ))}
+            <li>
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className={sidebarLinkClass}
+                style={{
+                  transitionDelay: open ? "200ms" : "0ms",
+                }}
+              >
+                <span className={sidebarLabelClass}>Home</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about-us"
+                onClick={() => setOpen(false)}
+                className={sidebarLinkClass}
+                style={{
+                  transitionDelay: open ? "320ms" : "0ms",
+                }}
+              >
+                <span className={sidebarLabelClass}>About</span>
+              </Link>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => setOpen(false)}
+                className={sidebarLinkClass}
+                style={{
+                  transitionDelay: open ? "440ms" : "0ms",
+                }}
+              >
+                <span className={sidebarLabelClass}>Contact</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => setOpen(false)}
+                className={sidebarLinkClass}
+                style={{
+                  transitionDelay: open ? "560ms" : "0ms",
+                }}
+              >
+                <span className={sidebarLabelClass}> Carrers</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                onClick={() => setOpen(false)}
+                className={sidebarLinkClass}
+                style={{
+                  transitionDelay: open ? "680ms" : "0ms",
+                }}
+              >
+                <span className={sidebarLabelClass}>Blogs</span>
+              </a>
+            </li>
           </ul>
         </nav>
 
