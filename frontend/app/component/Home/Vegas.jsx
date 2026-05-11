@@ -53,18 +53,22 @@ const Vegas = () => {
                   height={16}
                   className="h-4 w-4"
                 />
-                Sector-10, Greater Noida (W)
+                 Sector 82, Faridabad
+                 Situated in the commercial hub of Greater Faridabad
               </p>
               <p className="flex items-center gap-2">
                 <i className="ri-checkbox-circle-fill text-black"></i>
-                RERA NUMBER: UPRERAPRJ503189
+                RERA NUMBER: 275/2021
               </p>
+              <p className="flex items-center gap-2">
+                <i className="ri-checkbox-circle-fill text-black"></i>Status: Now Fully Operational              </p>
+              
             </div>
 
             <div className="mt-8 flex flex-wrap items-end justify-between gap-4 border-l-2 border-[#d0d0d0] pl-4">
               <div>
                 <p className="font-montserrat text-[16px] font-normal leading-[29px] tracking-normal text-[#000000]">
-                  Start From
+                Price starting from- 
                 </p>
                 <p className="font-montserrat text-[24px] font-bold leading-[29px] tracking-normal text-[#000000]">
                   01.52 CR*

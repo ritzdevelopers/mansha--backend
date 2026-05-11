@@ -8,19 +8,19 @@ const Headline = () => {
         <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <h1 className="font-optima max-w-[min(100%,42rem)] shrink-0 text-[42px] sm:text-[50px] lg:text-[40px] xl:text-[65px] capitalize tracking-normal [leading-trim:both] [text-edge:cap_alphabetic]">
             <span className="block font-normal not-italic  text-black xl:leading-[80px] lg:leading-[50px] md:leading-[60px] leading-[40px]">
-              Your Captivating
+              Where Decisions 
             </span>
             <span className="block leading-none">
-              <span className="font-bold text-[#652A27]">Headline</span>
-              <span className="font-normal text-black"> Goes Here</span>
+              <span className="font-bold text-[#652A27]">Turn </span>
+              <span className="font-normal text-black">Into Destinations              </span>
             </span>
           </h1>
           {/* rounded-full border border-[#652A27] */}
 
-          <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:w-auto lg:max-w-xl lg:shrink-0 lg:justify-end lg:gap-[80px]">
+          <div className="flex w-full flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:w-auto lg:max-w-xl lg:shrink-0 lg:justify-end xl:gap-[40px] lg:gap-[0px]">
             <p className="font-['Arial',Helvetica,sans-serif] text-[clamp(1.125rem,2vw+0.5rem,30px)] font-normal not-italic leading-none tracking-normal text-[#111111]">
-              <span className="block leading-[30px] xl:leading-[30px]">with a leading real</span>
-              <span className="block">estate agency</span>
+              <span className="block leading-[30px] xl:leading-[30px] text-[20px]">Every choice leads you </span>
+              <span className="block text-[20px]">closer to where you truly belong.</span>
             </p>
             {/* hover:translate-x-0 */}
             <Link
