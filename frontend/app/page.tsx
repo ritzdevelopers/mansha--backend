@@ -9,7 +9,7 @@ import Vegas from "./component/Home/Vegas";
 import Signature from "./component/common/Signature";
 import Manshagroup from "./component/Home/Manshagroup";
 import Investment from "./component/Home/Investment";
-import Faq from "./component/Home/Faq";
+import Faq from "./component/common/FAQ";
 import Testiimonial from "./component/Home/Testiimonial";
 import Consultation from "./component/Home/Consultation";
 import Footer from "./component/Home/Footer";
@@ -29,7 +29,9 @@ export default function Home() {
      <Signature/>
       <Manshagroup />
       <Investment />
+      <div className="pt-[35px] lg:pt-[70px]">
       <Faq />
+      </div>
       {/* <Testiimonial /> */}
       <TestimoniaCommon />
       {/* <Consultation /> */}

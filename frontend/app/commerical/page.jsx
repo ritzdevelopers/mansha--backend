@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../component/commerical/Navbar'
 import Invest from '../component/commerical/Invest'
 import Brandsection from '../component/common/Brandsection'
-import Gallery from "../component/commerical/Gallery";
+import Gallery from "../component/common/Gallery";
 import Bank from '../component/commerical/Bank'
 import Footer from '../component/Home/Footer'
 import Everything from '../component/common/Everything'
