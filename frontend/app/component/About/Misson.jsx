@@ -2,8 +2,10 @@ import Image from "next/image";
 import React from "react";
 
 const SECTION_TEXT =
-  "Driven by Mission, integrity, and a commitment to excellence, the leadership behind Mansha Group has consistently focused on creating developments that combine innovation, quality, and long-term value. With deep industry expertise and a forward-thinking approach, every project is shaped with precision, purpose, and customer trust at its core.";
+  "To create thoughtfully designed residential and commercial spaces that combine quality, innovation, and modern living while ensuring timely delivery and complete customer satisfaction.  With a commitment to excellence and trust, we aim to build communities that enhance lifestyles and inspire future growth.";
 
+  const Vision_TEXT =
+  "To be recognized as a trusted and progressive real estate brand that transforms ideas into landmark developments built on integrity, sustainability, and lasting value. We envision shaping modern communities that reflect comfort, elegance, and a better way of living for generations to come.";
 const Misson = () => {
   return (
     <section className="w-full bg-white py-[35px] sm:py-12 lg:py-[70px]">
@@ -31,7 +33,7 @@ const Misson = () => {
 
         <div className="grid grid-cols-1 gap-5 border border-[#DDDDDD] p-4 md:gap-6 md:p-6 lg:grid-cols-[398px_1fr] lg:items-start lg:gap-y-6 lg:gap-x-15 lg:p-8 xl:grid-cols-[1fr_398px_auto]">
           <p className="order-3 font-montserrat text-[16px] font-normal leading-[25px]md:leading-[29px] tracking-[0px] capitalize text-[#333333] lg:order-3 text-center md:text-left lg:self-end max-w-[600px] xl:order-1">
-            {SECTION_TEXT}
+            {Vision_TEXT}
           </p>
 
           <div className="order-2 w-full overflow-hidden md:w-[398px] lg:order-2">

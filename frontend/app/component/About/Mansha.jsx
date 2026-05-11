@@ -17,11 +17,9 @@ const Mansha = () => {
         {/* Right Content */}
         <div className="max-w-[1100px]">
           <h2 className="font-montserrat text-[17px] font-[400] md:font-[600] lg:leading-[38px] md:leading-[30px] tracking-normal text-black lg:text-[24px] md:text-[20px] leading-[25px]">
-            At Mansha Group, We Are Proud To Be One Of The Fastest-Growing{" "}
+          At Mansha Group, we are proud to be one of the fastest-growing{" "}
             <span className="text-black/40">
-              Real Estate Developers In Faridabad. Our Journey Is Fueled By A
-              Deep Commitment To Quality, Innovation, And Customer Satisfaction,
-              Making Us A Prominent Name In The Region’s Real Estate Landscape.
+            real estate developers in Faridabad, driven by a strong commitment to quality, innovation, and customer satisfaction.
             </span>
           </h2>
         </div>
@@ -62,13 +60,9 @@ const Mansha = () => {
 
           <div className="order-3 mt-2 md:mt-5 w-full max-w-[450px] text-center md:max-w-full md:text-left lg:order-none lg:mt-0 lg:max-w-[450px]">
             <p className="font-montserrat text-[16px]  font-normal leading-[25px] md:leading-[28px] tracking-[0px] capitalize text-[#333333]">
-              At Mansha Group, we are proud to be one of the fastest-growing
-              real estate developers in Faridabad. Our journey is fueled by a
-              deep commitment to quality, innovation, and customer
-              satisfaction, making us a prominent name in the region’s real
-              estate landscape. Our portfolio spans both residential and
-              commercial properties, each designed with a focus on modernity,
-              comfort, and sustainability. We believe that a home is more than...
+            Our portfolio includes both residential and commercial properties, thoughtfully designed with a focus on modernity, comfort, and sustainability. We believe a home is more than just a place to live; it is a space where memories are made, which is why every project is crafted with attention to detail.
+            What sets us apart is our commitment to timely delivery and reliability. We take pride in completing projects on schedule while consistently exceeding expectations.
+
             </p>
 
             <button
