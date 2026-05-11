@@ -108,9 +108,9 @@ const Journey = () => {
       >
         <div
           ref={stickyRef}
-          className="relative h-[125vh] overflow-hidden md:h-auto lg:h-screen min-[1700px]:h-auto"
+          className="relative h-[125vh] overflow-hidden md:h-screen lg:h-screen min-[1700px]:h-auto"
         >
-            <div className="pointer-events-none absolute inset-0 z-0 md:inset-x-0 md:top-0 md:bottom-auto md:h-[530px] lg:inset-0 lg:bottom-0 lg:h-auto">
+            <div className="pointer-events-none absolute inset-0 z-0 md:inset-0 md:h-[800px] lg:inset-0 lg:bottom-0 lg:h-full">
               <Image
                 src="/mansha-image/Journey.jpg"
                 alt="Journey background"
@@ -121,7 +121,7 @@ const Journey = () => {
             </div>
 
             <div className="relative z-10 h-full px-5 py-6 sm:px-8 sm:py-8 lg:px-[70px] lg:py-10 py-[35px] lg:py-[70px]">
-              <div className="flex flex-col gap-4 text-center md:text-left lg:grid lg:grid-cols-[auto_1fr] lg:items-center lg:gap-x-16 lg:gap-y-6">
+              <div className="flex flex-col gap-4 text-center md:text-left lg:grid lg:grid-cols-[auto_1fr] lg:items-center lg:gap-x-16 lg:gap-y-6 mt-0 md:mt-10 lg:mt-0 md:gap-y-6">
                 <div className="mx-auto inline-flex w-fit rounded-full bg-[#3F8A3D]/80 px-5 py-[7px] font-montserrat text-[14px] font-medium leading-[100%] tracking-[0%] capitalize text-white md:mx-0">
                   Since 2006
                 </div>
