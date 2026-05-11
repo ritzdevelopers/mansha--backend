@@ -126,14 +126,12 @@ const Journey = () => {
                   Since 2006
                 </div>
                 <h2 className="font-optima text-[28px] md:text-[36px] font-normal leading-[100%] tracking-[0%] capitalize text-white">
-                  Our Journey
+                  Our Story
                 </h2>
                 <p className="max-w-[1100px] w-full md:max-w-full lg:max-w-[1100px] font-montserrat text-[16px] font-semibold leading-[24px] md:text-[17px] md:leading-[26px] lg:text-[20px] lg:leading-[35px] tracking-[0px] capitalize text-white lg:col-start-2">
-                  At Mansha Group, we’re more than just developers—{" "}
+                Over the years, our path has been shaped by-{" "}
                   <span className="text-[#FFFFFF99]">
-                    we’re creators of communities. Join us as we continue to
-                    transform Faridabad with spaces that are not just well-built
-                    but thoughtfully designed to enhance your life.
+                  innovation, resilience, and the drive to exceed expectations at every stage. By turning challenges into opportunities, we continue creating a legacy of progress and achievement.
                   </span>
                 </p>
               </div>

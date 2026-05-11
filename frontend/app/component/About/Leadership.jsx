@@ -6,16 +6,13 @@ const Leadership = () => {
     <section className="w-full ">
       <div className="mx-auto max-w-8xl px-5 pb-[35px] text-center sm:px-8 lg:px-[75px] lg:pb-[70px]">
         <h2 className="font-optima text-[28px] md:text-[36px] lg:text-[30px] xl:text-[36px] font-[500] leading-[30px] md:leading-[48px] tracking-[0%] capitalize text-[#111111]">
-          Leadership That Inspires Growth
+        Growth Driven By Leadership
+
         </h2>
 
         <p className="mx-auto mt-4 max-w-[1050px] font-montserrat text-[16px] font-normal leading-[25px] md:leading-[29px] tracking-[0px] capitalize text-[#333333]">
-          Driven by vision, integrity, and a commitment to excellence, the
-          leadership behind Mansha Group has consistently focused on creating
-          developments that combine innovation, quality, and long-term value.
-          With deep industry expertise and a forward-thinking approach, every
-          project is shaped with precision, purpose, and customer trust at its
-          core.
+        Leadership is the foundation of lasting achievement. Inspiring collaboration, resilience,and continuous progress. Turning potential into measurable success every day.
+
         </p>
 
         <div className="mx-auto mt-10 grid max-w-[830px] grid-cols-1 gap-6 md:grid-cols-2">
