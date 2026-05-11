@@ -101,7 +101,9 @@ const Facility = () => {
 
         <div className="order-2 lg:order-2">
           <p ref={subtitleRef} className="font-optima max-w-[560px] md:text-[25px] text-[22px] xl:text-[48px] lg:text-[44px] font-[500]  leading-[1.15] xl:leading-[55px] tracking-normal capitalize text-[#000000] lg:leading-[50px]">
-            Carefully designed infrastructure for living, working, and growth
+            
+ Carefully Designed Infrastructure For Living, Working, And Growth
+
           </p>
         </div>
       </div>
@@ -148,8 +150,8 @@ const Facility = () => {
               BUSINESS HUB
             </h3>
             <p className={`relative z-10 mt-2 font-montserrat text-[14px] font-normal not-italic leading-5 tracking-normal transition-colors duration-300 lg:text-[12px] lg:leading-[20px] xl:text-[16px] xl:leading-7 ${activeFacility === 0 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua
+            A space designed for performance and visibility, where businesses operate seamlessly and grow with confidence. From strategic locations to efficient layouts, everything is built to support productivity and long-term success.
+
             </p>
           </div>
 
@@ -161,11 +163,11 @@ const Facility = () => {
           >
             <span className={`absolute inset-y-0 left-0 z-0 bg-black transition-all duration-500 ${activeFacility === 1 ? "w-full lg:w-0 lg:group-hover/item:w-full" : "w-0 lg:group-hover/item:w-full"}`} />
             <h3 className={`relative z-10 font-montserrat text-[24px] font-semibold not-italic leading-none tracking-normal uppercase transition-colors duration-300 lg:text-[18px] xl:text-[24px] ${activeFacility === 1 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              BUSINESS HUB
+            RESIDENTIAL SPACES
             </h3>
             <p className={`relative z-10 mt-2 font-montserrat text-[14px] font-normal not-italic leading-5 tracking-normal transition-colors duration-300 lg:text-[12px] lg:leading-[20px] xl:text-[16px] xl:leading-7 ${activeFacility === 1 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
+            Thoughtfully planned homes that bring together comfort, convenience, and a sense of belonging. Designed to offer a balanced lifestyle with easy access to everyday essentials and open spaces.
+
             </p>
           </div>
 
@@ -177,11 +179,10 @@ const Facility = () => {
           >
             <span className={`absolute inset-y-0 left-0 z-0 bg-black transition-all duration-500 ${activeFacility === 2 ? "w-full lg:w-0 lg:group-hover/item:w-full" : "w-0 lg:group-hover/item:w-full"}`} />
             <h3 className={`relative z-10 font-montserrat text-[24px] font-semibold not-italic leading-none tracking-normal uppercase transition-colors duration-300 lg:text-[18px] xl:text-[24px] ${activeFacility === 2 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              BUSINESS HUB
+            COMMERCIAL GROWTH ZONES
             </h3>
             <p className={`relative z-10 mt-2 font-montserrat text-[14px] font-normal not-italic leading-5 tracking-normal transition-colors duration-300 lg:text-[12px] lg:leading-[20px] xl:text-[16px] xl:leading-7 ${activeFacility === 2 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
+            High-potential environments built for brands to thrive, attract, and scale. Every detail is aligned to maximize visibility, engagement, and return on investment.
             </p>
           </div>
 
@@ -193,11 +194,11 @@ const Facility = () => {
           >
             <span className={`absolute inset-y-0 left-0 z-0 bg-black transition-all duration-500 ${activeFacility === 3 ? "w-full lg:w-0 lg:group-hover/item:w-full" : "w-0 lg:group-hover/item:w-full"}`} />
             <h3 className={`relative z-10 font-montserrat text-[24px] font-semibold not-italic leading-none tracking-normal uppercase transition-colors duration-300 lg:text-[18px] xl:text-[24px] ${activeFacility === 3 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              BUSINESS HUB
+            INVESTMENT ZONE
             </h3>
             <p className={`relative z-10 mt-2 font-montserrat text-[14px] font-normal not-italic leading-5 tracking-normal transition-colors duration-300 lg:text-[12px] lg:leading-[20px] xl:text-[16px] xl:leading-7 ${activeFacility === 3 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
+            Built for those who think long-term, these spaces are positioned in high-growth corridors with strong appreciation potential. A smart choice for investors looking to secure value and steady returns.
+
             </p>
           </div>
 
@@ -209,11 +210,12 @@ const Facility = () => {
           >
             <span className={`absolute inset-y-0 left-0 z-0 bg-black transition-all duration-500 ${activeFacility === 4 ? "w-full lg:w-0 lg:group-hover/item:w-full" : "w-0 lg:group-hover/item:w-full"}`} />
             <h3 className={`relative z-10 font-montserrat text-[24px] font-semibold not-italic leading-none tracking-normal uppercase transition-colors duration-300 lg:text-[18px] xl:text-[24px] ${activeFacility === 4 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              BUSINESS HUB
+              
+            LIFESTYLE SPACES
+
             </h3>
             <p className={`relative z-10 mt-2 font-montserrat text-[14px] font-normal not-italic leading-5 tracking-normal transition-colors duration-300 lg:text-[12px] lg:leading-[20px] xl:text-[16px] xl:leading-7 ${activeFacility === 4 ? "text-white lg:text-[#000000] lg:group-hover/item:text-white" : "text-[#000000] lg:group-hover/item:text-white"}`}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
+            Designed beyond just functionality, these spaces bring comfort, openness, and everyday ease together. A setting where living feels effortless and experiences feel complete.
             </p>
           </div>
         </div>

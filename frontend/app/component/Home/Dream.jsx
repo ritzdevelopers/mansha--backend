@@ -38,17 +38,15 @@ const Dream = () => {
       <div className="mx-auto flex max-w-8xl flex-col items-center gap-[15px] px-5 py-[35px] text-center sm:px-8 md:items-start md:text-left lg:flex-row lg:items-center lg:gap-[0px] lg:justify-between lg:px-[75px] lg:py-[70px] 2xl:justify-center 2xl:gap-12">
       <div className="w-full shrink-0 lg:w-[28%] 2xl:w-auto">
       <h2 className="font-optima text-[28px] md:text-[36px] lg:text-[30px] xl:text-[36px] font-[400] not-italic leading-[30px] md:leading-[37px] tracking-normal capitalize text-[#111111]">
-  Shaping Dreams <br /> Into Masterpieces
+      Building Beyond  <br /> Expectations
 </h2>
 </div>
         <div className="w-full min-w-0 max-w-[800px]">
           <p className="font-montserrat text-[14px] lg:text-[16px] font-normal not-italic leading-[25px] lg:leading-[25px] xl:leading-7 tracking-[0px] capitalize text-[#6b6b6b]">
-            At Mansha Group, we are one of the fastest-growing real estate
-            developers in Faridabad, built on a foundation of quality,
-            innovation, and customer satisfaction. We develop thoughtfully
-            designed residential and commercial spaces that reflect modern
-            living, with a strong commitment to timely delivery and
-            reliability.
+          More than infrastructure, creating the backbone of future growth.
+ Driven by commitment, quality, and uncompromising performance.
+ Shaping visions into powerful masterpieces that energize progress.
+
           </p>
         </div>
 

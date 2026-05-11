@@ -4,29 +4,29 @@ import { useState } from "react";
 
 const faqs = [
   {
-    question: "What is off-plan real estate and is it worth investing in it?",
+    question: " What Is Off-Plan Real Estate And Is It Worth Investing In?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "Off-plan real estate refers to properties that are purchased before construction is completed. Investors often benefit from lower entry prices, flexible payment plans, and higher appreciation potential once the project is delivered. However, choosing a reliable developer is key to minimizing risks.",
   },
   {
-    question: "What is off-plan real estate and is it worth investing in it?",
+    question: " Why Should You Invest In Faridabad Real Estate?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Faridabad is rapidly emerging as a high-growth real estate destination, driven by improved connectivity, expanding infrastructure, and competitive pricing compared to other NCR regions. It offers strong potential for both end-users and investors.",
   },
   {
-    question: "What is off-plan real estate and is it worth investing in it?",
+    question: "Are Mansha Group Projects RERA Approved?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Yes, Mansha Group projects are RERA approved, ensuring transparency, legal compliance, and security for buyers. This helps investors make confident and informed decisions.",
   },
   {
-    question: "What is off-plan real estate and is it worth investing in it?",
+    question: "What Types Of Properties Does Mansha Group Offer?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Mansha Group offers a range of residential plots, independent floors, and commercial spaces designed to meet the needs of modern buyers and investors.",
   },
   {
-    question: "What is off-plan real estate and is it worth investing in it?",
+    question: "How Do I Choose The Right Property For Investment?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "The right property depends on factors like location, future development, connectivity, and developer credibility. It’s important to evaluate long-term appreciation potential and your investment goals before making a decision.",
   },
 ];
 
@@ -45,7 +45,7 @@ const Faq = () => {
             Frequently Asked Questions
           </h2>
           <p className="mt-2 xl:mt-7 font-montserrat md:text-[16px] text-[14px] font-normal leading-[100%] tracking-normal capitalize text-[#333333] text-center md:text-left">
-            If you have any other questions, please email us.
+          What Is Off-Plan Real Estate And Is It Worth Investing In?
           </p>
         </div>
 
