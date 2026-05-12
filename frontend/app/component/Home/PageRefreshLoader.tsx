@@ -2,19 +2,33 @@
 
 import { useEffect, useState, type CSSProperties } from "react";
 
-/** Wave fill `SPLASH_MS`; 5s ke baad MANSHA zoom+fade (`ZOOM_IN_MS`); phir unmount. */
+/**
+ * Premium cinematic splash:
+ *  - 0..SPLASH_MS:                       wave water rises smoothly from bottom to top of "MANSHA"
+ *  - SPLASH_MS..SPLASH_MS+ZOOM_IN_MS:    title zoom-in + fade, overlay fades out
+ */
 const SPLASH_MS = 7000;
 const ZOOM_IN_MS = 3000;
 
 type SplashPhase = "wave" | "exit";
+
+/** Bulletproof inline-SVG data URI (URL-encoded so it works in every modern browser + Turbopack). */
+const svgUrl = (svg: string) =>
+  `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+
+/** Single white wave + tall solid white fill below the crest. */
+const WAVE_BACK = svgUrl(
+  "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 140' preserveAspectRatio='none'>" +
+    "<path d='M0,20 C25,5 50,5 75,20 C100,35 125,35 150,20 L150,140 L0,140 Z' fill='#ffffff'/>" +
+    "</svg>"
+);
 
 export type PageRefreshLoaderProps = {
   /** Optional callback jab splash timer khatam ho (fixed overlay unmount). */
   onComplete?: () => void;
 };
 
-export default function 
-PageRefreshLoader({
+export default function PageRefreshLoader({
   onComplete,
 }: PageRefreshLoaderProps) {
   const [visible, setVisible] = useState(true);
@@ -23,6 +37,7 @@ PageRefreshLoader({
   const rootStyle = {
     "--splash-duration": `${SPLASH_MS}ms`,
     "--zoom-in-duration": `${ZOOM_IN_MS}ms`,
+    "--wave-back": WAVE_BACK,
   } as CSSProperties;
 
   useEffect(() => {
@@ -56,15 +71,11 @@ PageRefreshLoader({
         <div
           className={
             phase === "exit"
-              ? "splash-title-zoom splash-title-zoom--out"
-              : "splash-title-zoom"
+              ? "title-zoom title-zoom--out"
+              : "title-zoom"
           }
         >
-          <h1
-            className={`loader-outline waves-font mansha-splash-title font-black uppercase tracking-tight loading text-center wave ${
-              phase === "exit" ? "wave-frozen" : ""
-            }`}
-          >
+          <h1 className="waves-font mansha-splash-title font-black uppercase tracking-tight wave-text">
             MANSHA
           </h1>
         </div>
@@ -73,9 +84,6 @@ PageRefreshLoader({
       <style jsx global>{`
         .waves-font {
           font-family: var(--font-archivo-black), "Archivo Black", sans-serif;
-        }
-        .loader-outline {
-          text-shadow: none;
         }
       `}</style>
 
@@ -88,18 +96,22 @@ PageRefreshLoader({
           height: 100%;
           background: #141414;
           overflow: hidden;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          backface-visibility: hidden;
         }
 
         .loader-root--exit {
           animation: loader-root-fade var(--zoom-in-duration, ${ZOOM_IN_MS}ms)
             cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          pointer-events: none;
         }
 
         @keyframes loader-root-fade {
-          from {
+          0% {
             opacity: 1;
           }
-          to {
+          100% {
             opacity: 0;
           }
         }
@@ -115,51 +127,18 @@ PageRefreshLoader({
           overflow: hidden;
         }
 
-        .mansha-splash-title {
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          font-size: clamp(4rem, 16vw, 14.375rem);
-          line-height: 1;
-          box-sizing: border-box;
-        }
-
-        .loading {
-          text-transform: uppercase;
-          text-align: center;
-        }
-
-        @keyframes wave-animation {
-          0% {
-            background-position: 0 bottom;
-          }
-          100% {
-            background-position: 200px bottom;
-          }
-        }
-
-        @keyframes loading-animation {
-          0% {
-            background-size: 200px 0;
-          }
-          100% {
-            background-size: 200px 480px;
-          }
-        }
-
-        .splash-title-zoom {
+        .title-zoom {
           width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
           transform-origin: center center;
+          will-change: transform, opacity;
         }
 
-        /* Zoom wrapper pe transform — andar wave-filled text same rang/texture ke saath scale */
-        .splash-title-zoom--out {
+        .title-zoom--out {
           animation: mansha-zoom-in var(--zoom-in-duration, ${ZOOM_IN_MS}ms)
-            cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          will-change: transform, opacity;
+            cubic-bezier(0.45, 0, 0.05, 1) forwards;
         }
 
         @keyframes mansha-zoom-in {
@@ -168,30 +147,78 @@ PageRefreshLoader({
             opacity: 1;
           }
           100% {
-            transform: scale(2.4);
+            transform: scale(2.6);
             opacity: 0;
           }
         }
 
-        .wave {
-          background-image: url("https://i.imgur.com/uFpLbYt.png");
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: rgba(0, 0, 0, 0);
-          text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
-          background-position: 0 100%;
-          background-repeat: repeat-x;
-          background-size: 200px 0;
-          animation: wave-animation 1s infinite linear,
-            loading-animation var(--splash-duration, ${SPLASH_MS}ms) ease-out forwards;
-          opacity: 1;
+        .mansha-splash-title {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          font-size: clamp(4rem, 16vw, 14.375rem);
+          line-height: 1;
+          text-align: center;
+          letter-spacing: -0.01em;
+          box-sizing: border-box;
         }
 
-        /* Exit: fill complete frame lock + wave scroll band — phir bhi wahi fill color */
-        .wave-frozen {
-          animation: none !important;
-          background-size: 200px 480px !important;
-          background-position: 0 100% !important;
+        /*
+         * Wave-fill text: single white SVG wave (crest + tall solid fill below)
+         * clipped to the text glyphs via background-clip: text. The wave + solid
+         * white only appears INSIDE the "MANSHA" letters — everywhere else stays
+         * the dark background.
+         *
+         * The layer slides upward (background-position-y) so the water-line
+         * rises from text bottom to top over SPLASH_MS, while flowing
+         * horizontally at the same time.
+         */
+        .wave-text {
+          color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          background-image: var(--wave-back);
+          background-repeat: repeat-x;
+          background-size: 1.5em 1.4em;
+          background-position-x: 0em;
+          background-position-y: 0.95em;
+
+          animation:
+            wave-flow 5s linear infinite,
+            wave-rise var(--splash-duration, ${SPLASH_MS}ms)
+              cubic-bezier(0.65, 0.05, 0.35, 1) forwards;
+          will-change: background-position;
+          transform: translateZ(0);
+        }
+
+        /* Continuous horizontal drift: 3 full tiles of 1.5em = 4.5em over 5s.
+           Seamlessly loops (integer tile shift). */
+        @keyframes wave-flow {
+          0% {
+            background-position-x: 0em;
+          }
+          100% {
+            background-position-x: -4.5em;
+          }
+        }
+
+        /* Vertical rise: water surface starts AT element bottom (0.95em),
+           ends with solid fully covering each glyph top to bottom (-0.35em). */
+        @keyframes wave-rise {
+          0% {
+            background-position-y: 0.95em;
+          }
+          100% {
+            background-position-y: -0.35em;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .wave-text {
+            animation-duration: 1ms, var(--splash-duration, ${SPLASH_MS}ms);
+          }
         }
       `}</style>
     </div>

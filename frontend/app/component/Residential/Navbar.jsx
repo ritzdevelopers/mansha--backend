@@ -59,7 +59,7 @@ const Navbar = () => {
             />
           )}
 
-          <div className="relative z-50 mx-auto flex h-14 max-w-8xl items-center justify-between px-5 py-8 sm:px-8 lg:px-[75px]">
+          <div className="relative z-50 mx-auto flex h-14 max-w-8xl items-center justify-between px-5 py-10 sm:px-8 lg:px-[75px]">
             <Link
               href="/"
               className="flex shrink-0 items-center py-1 outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
@@ -67,10 +67,10 @@ const Navbar = () => {
             >
               <Image
                 src="/mansha-svg/mansha-logo.svg"
-                width={90}
-                height={50}
+                width={100}
+                height={70}
                 alt="Mansha"
-                className="h-12 w-auto sm:h-12"
+                className="h-12 w-auto sm:h-15"
                 priority
               />
             </Link>
@@ -113,10 +113,10 @@ const Navbar = () => {
 
         <div className="relative z-20 mx-auto flex min-h-screen w-full max-w-8xl items-start justify-center px-5 pt-28 sm:px-8 md:items-end md:justify-end md:pt-0 md:pb-10 lg:px-[75px] lg:pb-12">
           <div className="flex items-stretch gap-4 sm:gap-5">
-            <span className="hidden w-px shrink-0 self-stretch bg-white md:block" aria-hidden />
+            <span className="hidden w-px shrink-0 self-stretch bg-white md:block border-2 border-white" aria-hidden />
             <div className="text-center text-white md:text-left">
               <h1 className="whitespace-nowrap font-optima text-[18px] md:text-[25px] lg:text-[36px] font-medium leading-[42px] tracking-[0] capitalize text-white">
-              luxury living at OASIS by 
+              luxury living at OASIS by 
               </h1>
               <p className="mt-0 md:mt-2 font-optima text-[18px] md:text-[25px] lg:text-[36px] font-medium leading-[100%] tracking-[0] capitalize text-white">
               Mansha

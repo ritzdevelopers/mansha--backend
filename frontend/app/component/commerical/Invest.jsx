@@ -1,6 +1,10 @@
 "use client";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const INVEST_SLIDES = [
   "/mansha-image/invest-slider-1.png",
@@ -10,7 +14,33 @@ const INVEST_SLIDES = [
 ];
 
 const Invest = () => {
+  const leftSectionRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const leftSection = leftSectionRef.current;
+    if (!leftSection) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        leftSection,
+        { autoAlpha: 0, x: -120 },
+        {
+          autoAlpha: 1,
+          x: 0,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: leftSection,
+            start: "top 82%",
+            once: true,
+          },
+        }
+      );
+    }, leftSection);
+
+    return () => ctx.revert();
+  }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -23,7 +53,7 @@ const Invest = () => {
     <section className="w-full pb-[35px] lg:pb-[70px]">
       <div className="mx-auto max-w-[1525px] px-5 sm:px-8 lg:px-[70px]">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-8 xl:grid-cols-[1.15fr_0.85fr] xl:gap-10">
-          <div className="-ml-5 bg-[#F7F7F7] px-4 py-7 pl-5 sm:-ml-8 sm:px-6  sm:pl-8 lg:-ml-[70px] lg:px-8 xl:py-[100px] lg:py-[50px] lg:pl-[70px]">
+          <div ref={leftSectionRef} className="-ml-5 bg-[#F7F7F7] px-4 py-7 pl-5 sm:-ml-8 sm:px-6  sm:pl-8 lg:-ml-[70px] lg:px-8 xl:py-[100px] lg:py-[50px] lg:pl-[70px]">
             <h2 className="font-optima text-[28px] font-medium leading-[100%] tracking-[0] capitalize text-[#111111] md:text-[32px] lg:text-[28px] xl:text-[36px] text-center md:text-left">
               Why To Invest In Vega Street
             </h2>

@@ -19,9 +19,9 @@ const amenityItems = [
 
 const Everything = () => {
   return (
-    <section className="w-full pb-[35px] lg:pb-[70px]">
+    <section className="w-full py-[35px] lg:py-[70px]">
       <div className="mx-auto max-w-[1525px] px-5 sm:px-8 lg:px-[70px]">
-        <h2 className="font-optima text-[28px] md:text-[36px] text-center md:text-left font-[550] leading-[100%] tracking-[0] capitalize text-[#000000]">
+        <h2 className="font-optima text-[28px] md:text-[36px] text-center md:text-left font-[500] leading-[100%] tracking-[0] capitalize text-[#000000]">
           Everything Within Reach
         </h2>
         <p className=" mt-4  font-montserrat text-[16px] font-normal text-center md:text-left leading-[25px] md:leading-[28px] tracking-[0px] capitalize text-[#333333] ">
@@ -29,7 +29,7 @@ const Everything = () => {
           comfort, and community come together effortlessly.
         </p>
 
-        <div className="relative mt-8 lg:mt-10">
+        <div className="relative mt-8 lg:mt-14">
           <div className="flex flex-col md:items-center lg:flex-row lg:items-stretch">
             <div className="relative min-h-[280px] w-full flex-1 overflow-hidden border border-[#E6E6E6] bg-[#F5F5F5] sm:min-h-[320px] md:w-full lg:h-[540px] lg:min-h-[540px]">
               <iframe
@@ -52,7 +52,7 @@ const Everything = () => {
                     alt=""
                     width={22}
                     height={22}
-                    className="h-[22px] w-[22px] object-contain"
+                    className="h-[30px] w-[30px] object-contain"
                   />
                 </span>
               </div>

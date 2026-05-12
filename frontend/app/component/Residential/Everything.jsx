@@ -21,7 +21,7 @@ const Everything = () => {
   return (
     <section className="w-full pb-[35px] lg:pb-[70px]">
       <div className="mx-auto max-w-[1525px] px-5 sm:px-8 lg:px-[70px]">
-        <h2 className="font-optima text-[28px] md:text-[36px] text-center md:text-left font-[550] leading-[100%] tracking-[0] capitalize text-[#000000]">
+        <h2 className="font-optima text-[28px] md:text-[36px] text-center md:text-left font-[500] leading-[100%] tracking-[0] capitalize text-[#000000]">
           Everything Within Reach
         </h2>
         <p className=" mt-4  font-montserrat text-[16px] font-normal text-center md:text-left leading-[25px] md:leading-[28px] tracking-[0px] capitalize text-[#333333] ">

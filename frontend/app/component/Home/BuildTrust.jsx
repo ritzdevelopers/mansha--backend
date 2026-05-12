@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+
+
 const BuildTrust = () => {
   return (
     <section id="build-trust-section" className="w-full bg-white ">
@@ -32,7 +34,7 @@ const BuildTrust = () => {
                 alt=""
                 width={300}
                 height={150}
-                className="h-auto w-[min(200px,18vw)] max-w-[240px] object-contain object-center min-[1650px]:hidden"
+                className="h-auto w-[min(200px,18vw)] max-w-[240px] translate-y-[15px] rotate-[-5deg]  object-contain object-center min-[1650px]:hidden "
               />
             </div>
 
@@ -54,13 +56,19 @@ const BuildTrust = () => {
                 className="relative z-[1] hidden shrink-0 xl:flex xl:self-center xl:items-center xl:-translate-x-[10px] xl:translate-y-[-12px] 2xl:-translate-y-[-0px] 2xl:-translate-x-[110px] min-[1650px]:hidden"
                 aria-hidden
               >
-                <Image
-                  src="/mansha-image/burststraight-line.png"
-                  alt=""
-                  width={320}
-                  height={24}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="223"
+                  height="10"
+                  viewBox="0 0 223 10"
+                  fill="none"
                   className="h-auto w-[min(220px,22vw)] max-w-[280px] object-contain object-center min-[1650px]:hidden"
-                />
+                >
+                  <path
+                    d="M4.91142e-05 4.80005C4.91142e-05 7.45102 2.14908 9.60005 4.80005 9.60005C7.45102 9.60005 9.60005 7.45102 9.60005 4.80005C9.60005 2.14908 7.45102 4.91142e-05 4.80005 4.91142e-05C2.14908 4.91142e-05 4.91142e-05 2.14908 4.91142e-05 4.80005ZM213 4.80005C213 7.45102 215.149 9.60005 217.8 9.60005C220.451 9.60005 222.6 7.45102 222.6 4.80005C222.6 2.14908 220.451 4.91142e-05 217.8 4.91142e-05C215.149 4.91142e-05 213 2.14908 213 4.80005ZM4.80005 4.80005V5.70005H217.8V4.80005V3.90005H4.80005V4.80005Z"
+                    fill="#D4D4D4"
+                  />
+                </svg>
               </div>
               <div className="min-w-[98px] text-center max-md:w-full sm:min-w-[120px]">
                 <div className="2xl:-translate-x-[100px] 2xl:translate-y-[10px] min-[1650px]:!translate-x-[20px] min-[1650px]:translate-y-0">
