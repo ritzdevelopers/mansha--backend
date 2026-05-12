@@ -62,7 +62,7 @@ const Navbar = () => {
             />
           )}
 
-          <div className="relative z-50 mx-auto flex h-14 max-w-8xl items-center justify-between px-5 py-8 sm:px-8 lg:px-[75px]">
+          <div className="relative z-50 mx-auto flex h-14 max-w-8xl items-center justify-between px-5 py-10 sm:px-8 lg:px-[75px]">
             <Link
               href="/"
               className="flex shrink-0 items-center py-1 outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
@@ -70,10 +70,10 @@ const Navbar = () => {
             >
               <Image
                 src="/mansha-svg/mansha-logo.svg"
-                width={90}
+                width={100}
                 height={50}
                 alt="Mansha"
-                className="h-12 w-auto sm:h-12"
+                className="h-12 w-auto sm:h-15"
                 priority
               />
             </Link>
@@ -190,14 +190,14 @@ const Navbar = () => {
 
       <section className="w-full bg-white pb-[35px] lg:pb-[70px]">
         <div className="mx-auto max-w-[1525px] px-5 sm:px-8 lg:px-[70px]">
-          <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-[1fr_1.7fr] md:justify-items-start xl:gap-14">
+          <div className="grid grid-cols-1 justify-items-center gap-4 lg:grid-cols-[1fr_1.7fr] md:justify-items-start xl:gap-0">
             <div className="flex flex-col items-center lg:items-start">
-              <h2 className="font-optima text-[24px] md:text-[36px] lg:text-[28px] font-medium leading-[100%] tracking-[0] text-black">
+              <h2 className="font-optima text-[24px] md:text-[36px] lg:text-[36px] font-medium leading-[100%] tracking-[0] text-black">
                 About Vega Street
               </h2>
               <button
                 type="button"
-                className="mt-4 hidden w-fit items-center gap-2 rounded-full bg-[#652A27] px-6 py-3 font-montserrat text-[16px] font-normal leading-[100%] tracking-[0] text-white lg:mt-8 lg:inline-flex"
+                className="mt-4 hidden w-fit items-center gap-2 rounded-full bg-[#652A27] px-6 py-4 font-montserrat text-[16px] font-normal leading-[100%] tracking-[0] text-white lg:mt-8 lg:inline-flex"
               >
                 Enquire Now
                 <i className="ri-arrow-right-line text-[20px]" aria-hidden />

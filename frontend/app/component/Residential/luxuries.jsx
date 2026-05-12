@@ -26,7 +26,7 @@ const Luxuries = () => {
               Little luxuries that make every day special.
             </h2>
 
-            <div className="xl:mt-16 lg:mt-5 mt-3 grid grid-cols-2 gap-0 text-center sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 lg:gap-6">
+            <div className="xl:mt-16 lg:mt-5 mt-3 grid grid-cols-2 gap-0 text-center sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-5 lg:gap-0 xl:gap-6">
               {luxuryItems.map((item, idx) => (
                 <div
                   key={item.label}
@@ -39,7 +39,7 @@ const Luxuries = () => {
                     alt={item.label}
                     width={52}
                     height={52}
-                    className="h-[38px] w-[38px] object-contain md:h-[42px] md:w-[42px] lg:h-[52px] lg:w-[52px]"
+                    className="h-[38px] w-[38px] object-contain md:h-[42px] md:w-[42px] lg:h-[52px] lg:w-[52px] xl:h-[80px] xl:w-[80px]"
                   />
                   <p className="mt-2 text-center font-optima text-[13px] font-[500] leading-[100%] capitalize text-[#000000] md:mt-3 md:text-[14px] lg:text-[16px]">
                     {item.label}

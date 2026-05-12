@@ -18,7 +18,7 @@ const Brandsection = () => {
           />
           {/* <div className="absolute inset-0 bg-[#00000066]" /> */}
 
-          <div className="absolute inset-x-0 top-0 z-10 px-5 pt-6 sm:px-8 sm:pt-8 lg:px-[70px] lg:pt-10">
+          <div className="absolute inset-x-0 top-0 z-10 px-5 pt-6 sm:px-8 sm:pt-8 lg:px-[70px] lg:pt-16">
             <p className="max-w-[700px] text-center md:text-left font-montserrat text-[16px] font-semibold leading-[22px] md:leading-[24px] tracking-[0] text-white">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -28,7 +28,7 @@ const Brandsection = () => {
           </div>
 
           <div className="absolute inset-x-0 bottom-0 z-10 px-5 sm:px-8 lg:px-[70px]">
-            <div className="  xl:mt-[-200px] grid grid-cols-1 items-center gap-4 py-4 lg:grid-cols-2 lg:gap-6">
+            <div className="  xl:mt-[-200px] grid grid-cols-1 items-center gap-4 py-4 lg:grid-cols-[1fr_3fr] lg:gap-6">
               <p className="text-center font-montserrat text-[18px] font-semibold leading-[100%] tracking-[0] text-white lg:text-right">
                 Brand Lists
               </p>

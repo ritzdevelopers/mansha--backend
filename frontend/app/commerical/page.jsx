@@ -20,7 +20,7 @@ const CommercialPage = () => {
       <Bank />
       <Everything />
       <FAQCommerical />
-      <TestimoniaCommon />
+      <TestimoniaCommon/>
       <Workplace />
       <Footer />
     </div>

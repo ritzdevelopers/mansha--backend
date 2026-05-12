@@ -49,7 +49,7 @@ const AboutNav = () => {
             />
           )}
 
-          <div className="relative z-50 mx-auto flex h-14 max-w-8xl items-center justify-between px-5 py-8 sm:px-8 lg:px-[75px]">
+          <div className="relative z-50 mx-auto flex h-14 max-w-8xl items-center justify-between px-5 py-10 sm:px-8 lg:px-[75px]">
             <Link
               href="/"
               className="flex shrink-0 items-center py-1 outline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white/50"
@@ -57,10 +57,10 @@ const AboutNav = () => {
             >
               <Image
                 src="/mansha-svg/mansha-logo.svg"
-                width={90}
+                width={100}
                 height={50}
                 alt="Mansha"
-                className="h-12 w-auto sm:h-12"
+                className="h-12 w-auto sm:h-15"
                 priority
               />
             </Link>

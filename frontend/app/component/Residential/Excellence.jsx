@@ -1,7 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const LEFT_SLIDES = [
   {
@@ -32,7 +35,7 @@ const RIGHT_SLIDES = [
     text: "Expansive Green Vistas And Themed Outdoor Experiences.",
   },
   {
-    src: "/mansha-image/gym-new-big.jpg",
+    src: "/mansha-image/outdoor-cafe-big.jpg",
     alt: "Gym",
     title: "Modern Fitness Studio",
     text: "Train In A Well-Equipped Space Built For Daily Performance.",
@@ -41,107 +44,66 @@ const RIGHT_SLIDES = [
 const ALL_SLIDES = [...LEFT_SLIDES, ...RIGHT_SLIDES];
 
 const Excellence = () => {
-  const [leftSlide, setLeftSlide] = useState(0);
-  const [rightSlide, setRightSlide] = useState(0);
-  const [leftTransitioning, setLeftTransitioning] = useState(true);
-  const [rightTransitioning, setRightTransitioning] = useState(true);
-  const [mobileSlide, setMobileSlide] = useState(0);
-  const [mobileTransitioning, setMobileTransitioning] = useState(true);
-  const leftSlidesLoop = [...LEFT_SLIDES, LEFT_SLIDES[0]];
-  const rightSlidesLoop = [...RIGHT_SLIDES, RIGHT_SLIDES[0]];
-  const mobileSlidesLoop = [...ALL_SLIDES, ALL_SLIDES[0]];
+  const leftSwiperRef = useRef(null);
+  const rightSwiperRef = useRef(null);
+  const mobileSwiperRef = useRef(null);
+  const [leftIndex, setLeftIndex] = useState(0);
+  const [rightIndex, setRightIndex] = useState(0);
+  const [mobileIndex, setMobileIndex] = useState(0);
 
-  const leftIndex = ((leftSlide % LEFT_SLIDES.length) + LEFT_SLIDES.length) % LEFT_SLIDES.length;
-  const rightIndex = ((rightSlide % RIGHT_SLIDES.length) + RIGHT_SLIDES.length) % RIGHT_SLIDES.length;
-  const activeLeftSlide = LEFT_SLIDES[leftIndex];
-  const activeRightSlide = RIGHT_SLIDES[rightIndex];
-  const mobileIndex = ((mobileSlide % ALL_SLIDES.length) + ALL_SLIDES.length) % ALL_SLIDES.length;
-  const activeMobileSlide = ALL_SLIDES[mobileIndex];
+  const activeLeftSlide = LEFT_SLIDES[leftIndex] || LEFT_SLIDES[0];
+  const activeRightSlide = RIGHT_SLIDES[rightIndex] || RIGHT_SLIDES[0];
+  const activeMobileSlide = ALL_SLIDES[mobileIndex] || ALL_SLIDES[0];
+
   const goNext = () => {
-    setLeftTransitioning(true);
-    setRightTransitioning(true);
-    setLeftSlide((prev) => prev + 1);
-    setRightSlide((prev) => prev + 1);
-    setMobileTransitioning(true);
-    setMobileSlide((prev) => prev + 1);
+    leftSwiperRef.current?.slideNext();
+    rightSwiperRef.current?.slideNext();
+    mobileSwiperRef.current?.slideNext();
   };
   const goPrev = () => {
-    setLeftTransitioning(true);
-    setRightTransitioning(true);
-    setLeftSlide((prev) => prev - 1);
-    setRightSlide((prev) => prev - 1);
-    setMobileTransitioning(true);
-    setMobileSlide((prev) => prev - 1);
-  };
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setLeftTransitioning(true);
-      setRightTransitioning(true);
-      setLeftSlide((prev) => prev + 1);
-      setRightSlide((prev) => prev + 1);
-      setMobileTransitioning(true);
-      setMobileSlide((prev) => prev + 1);
-    }, 3200);
-    return () => window.clearInterval(timer);
-  }, []);
-
-  const onLeftTransitionEnd = () => {
-    if (leftSlide === LEFT_SLIDES.length) {
-      setLeftTransitioning(false);
-      setLeftSlide(0);
-      requestAnimationFrame(() => requestAnimationFrame(() => setLeftTransitioning(true)));
-    }
-  };
-
-  const onRightTransitionEnd = () => {
-    if (rightSlide === RIGHT_SLIDES.length) {
-      setRightTransitioning(false);
-      setRightSlide(0);
-      requestAnimationFrame(() => requestAnimationFrame(() => setRightTransitioning(true)));
-    }
-  };
-
-  const onMobileTransitionEnd = () => {
-    if (mobileSlide === ALL_SLIDES.length) {
-      setMobileTransitioning(false);
-      setMobileSlide(0);
-      requestAnimationFrame(() => requestAnimationFrame(() => setMobileTransitioning(true)));
-    }
+    leftSwiperRef.current?.slidePrev();
+    rightSwiperRef.current?.slidePrev();
+    mobileSwiperRef.current?.slidePrev();
   };
 
   return (
-    <section className="w-full pb-[35px] lg:pb-[70px]">
+    <section className="w-full pb-[35px] lg:pb-[70px] bg-[#FCFCFC]">
       <div className="mx-auto max-w-[1525px] px-5 sm:px-8 lg:px-[70px]">
-        <h2 className="font-optima text-center md:text-left md:text-[36px] text-[28px] font-[550] leading-[54px] capitalize text-[#000000]">
+        <h2 className="font-optima text-center md:text-left md:text-[36px] text-[28px] font-[500] leading-[54px] capitalize text-[#000000]">
           Essence of Excellence
         </h2>
 
         <div className="mt-6 hidden grid-cols-1 gap-4 xl:grid xl:grid-cols-[3fr_1fr]">
           <article className="group relative overflow-hidden">
-            <div
-              className="flex h-[430px] w-full ease-out"
-              style={{
-                transform: `translateX(-${leftSlide * 100}%)`,
-                transitionProperty: "transform",
-                transitionDuration: leftTransitioning ? "700ms" : "0ms",
+            <Swiper
+              modules={[Autoplay]}
+              loop
+              autoplay={{ delay: 3200, disableOnInteraction: false }}
+              speed={700}
+              slidesPerView={1}
+              onSwiper={(swiper) => {
+                leftSwiperRef.current = swiper;
               }}
-              onTransitionEnd={onLeftTransitionEnd}
+              onSlideChange={(swiper) => setLeftIndex(swiper.realIndex)}
+              className="h-[496px] w-full"
             >
-              {leftSlidesLoop.map((slide, idx) => (
-                <div key={`${slide.src}-${idx}`} className="relative h-full w-full shrink-0">
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 75vw"
-                  />
-                </div>
+              {LEFT_SLIDES.map((slide, idx) => (
+                <SwiperSlide key={`left-${slide.src}-${idx}`}>
+                  <div className="relative h-full w-full bg-[#1a1a1a]">
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 75vw"
+                      priority={idx === 0}
+                    />
+                  </div>
+                </SwiperSlide>
               ))}
-            </div>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
+            </Swiper>
+            <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+            <div className="absolute z-[2] bottom-6 left-6 right-6 text-white">
               <h3 className="font-montserrat text-[20px] font-bold leading-[100%] capitalize text-white">
                 {activeLeftSlide.title}
               </h3>
@@ -152,29 +114,35 @@ const Excellence = () => {
           </article>
 
           <article className="group relative overflow-hidden">
-            <div
-              className="flex h-[430px] w-full ease-out"
-              style={{
-                transform: `translateX(-${rightSlide * 100}%)`,
-                transitionProperty: "transform",
-                transitionDuration: rightTransitioning ? "700ms" : "0ms",
+            <Swiper
+              modules={[Autoplay]}
+              loop
+              autoplay={{ delay: 3200, disableOnInteraction: false }}
+              speed={700}
+              slidesPerView={1}
+              onSwiper={(swiper) => {
+                rightSwiperRef.current = swiper;
               }}
-              onTransitionEnd={onRightTransitionEnd}
+              onSlideChange={(swiper) => setRightIndex(swiper.realIndex)}
+              className="h-[496px] w-full"
             >
-              {rightSlidesLoop.map((slide, idx) => (
-                <div key={`${slide.src}-${idx}`} className="relative h-full w-full shrink-0">
-                  <Image
-                    src={slide.src}
-                    alt={slide.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 25vw"
-                  />
-                </div>
+              {RIGHT_SLIDES.map((slide, idx) => (
+                <SwiperSlide key={`right-${slide.src}-${idx}`}>
+                  <div className="relative h-full w-full bg-[#1a1a1a]">
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 25vw"
+                      priority={idx === 0}
+                    />
+                  </div>
+                </SwiperSlide>
               ))}
-            </div>
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white">
+            </Swiper>
+            <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
+            <div className="absolute z-[2] bottom-6 left-6 right-6 text-white">
               <h3 className="overflow-hidden text-ellipsis whitespace-nowrap font-montserrat text-[20px] font-bold leading-[100%] capitalize text-white">
                 {activeRightSlide.title}
               </h3>
@@ -186,29 +154,35 @@ const Excellence = () => {
         </div>
 
         <article className="relative mt-2 md:mt-6 overflow-hidden xl:hidden">
-          <div
-            className="flex h-[150px] w-full ease-out lg:h-[380px] md:h-[330px]"
-            style={{
-              transform: `translateX(-${mobileSlide * 100}%)`,
-              transitionProperty: "transform",
-              transitionDuration: mobileTransitioning ? "700ms" : "0ms",
+          <Swiper
+            modules={[Autoplay]}
+            loop
+            autoplay={{ delay: 3200, disableOnInteraction: false }}
+            speed={700}
+            slidesPerView={1}
+            onSwiper={(swiper) => {
+              mobileSwiperRef.current = swiper;
             }}
-            onTransitionEnd={onMobileTransitionEnd}
+            onSlideChange={(swiper) => setMobileIndex(swiper.realIndex)}
+            className="h-[150px] w-full lg:h-[380px] md:h-[330px]"
           >
-            {mobileSlidesLoop.map((slide, idx) => (
-              <div key={`${slide.src}-${idx}`} className="relative h-full w-full shrink-0 bg-black/10">
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                />
-              </div>
+            {ALL_SLIDES.map((slide, idx) => (
+              <SwiperSlide key={`mobile-${slide.src}-${idx}`}>
+                <div className="relative h-full w-full bg-[#1a1a1a]">
+                  <Image
+                    src={slide.src}
+                    alt={slide.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="100vw"
+                    priority={idx === 0}
+                  />
+                </div>
+              </SwiperSlide>
             ))}
-          </div>
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
-          <div className="absolute bottom-2 left-2 md:left-6 right-2 md:right-6 text-white md:bottom-6">
+          </Swiper>
+          <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-black/65 via-black/20 to-transparent" />
+          <div className="absolute z-[2] bottom-2 left-2 md:left-6 right-2 md:right-6 text-white md:bottom-6">
             <h3 className="font-montserrat md:text-[20px] text-[10px] font-bold md:leading-[100%] leading-[12px] capitalize text-white">
               {activeMobileSlide.title}
             </h3>

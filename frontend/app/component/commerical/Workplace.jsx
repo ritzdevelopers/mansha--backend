@@ -34,7 +34,7 @@ const Workplace = () => {
 
             <button
               type="button"
-              className="group relative isolate mt-2 inline-flex -translate-y-[30px] shrink-0 cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-white px-2.5 py-3 font-montserrat text-[12px] font-normal leading-[100%] transition-colors duration-300 hover:bg-[#652A27] md:mt-10 md:px-3 md:py-3 md:text-[14px]"
+              className="group relative isolate mt-2 inline-flex -translate-y-[30px] shrink-0 cursor-pointer items-center gap-1 overflow-hidden rounded-full bg-white px-2.5 py-3 font-montserrat text-[12px] font-normal leading-[100%] transition-colors duration-300 hover:bg-[#652A27] md:mt-28 md:px-6 md:py-4 md:text-[20px]"
              >
               <span
                 aria-hidden
@@ -42,7 +42,7 @@ const Workplace = () => {
               />
               <span className="relative z-10 flex items-center gap-1 text-[#652A27] transition-colors duration-300 group-hover:text-white ">
                 Book Your Visit Today
-                <i className="ri-arrow-right-line text-[16px] transition-all duration-300 group-hover:translate-x-1.5" />
+                <i className="ri-arrow-right-line text-[22px] transition-all duration-300 group-hover:translate-x-1.5" />
               </span>
             </button>
           </div>
