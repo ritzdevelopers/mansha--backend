@@ -11,7 +11,7 @@ const WHATSAPP = "https://wa.me/919876543210";
 const iconBtn =
   "inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-md text-white transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:opacity-60";
 
-const ContactNav = () => {
+const NavMedia = () => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -31,20 +31,13 @@ const ContactNav = () => {
     <>
       <section className="about-hero relative min-h-screen overflow-hidden">
         <Image
-          src="/contact-image/contact-hero.jpg"
+          src="/media/media-nav.jpg"
           alt="About Hero"
           fill
           priority
-          className="z-0 object-cover"
+          className="object-cover"
         />
-        <div
-          className="pointer-events-none absolute inset-0 z-[1]"
-          style={{
-            background:
-              "linear-gradient(180.11deg, rgba(210, 102, 30, 0) 39.46%, #0D0202 99.9%)",
-          }}
-          aria-hidden
-        />
+        {/* <div className="absolute inset-0 bg-[#07063D5E]" /> */}
 
         <header className="absolute left-0 right-0 top-0 z-50 bg-[#FAFAFA2B] backdrop-blur-[1px] border-b border-white/10">
           {open && (
@@ -110,15 +103,15 @@ const ContactNav = () => {
 
         <div className="relative z-20 mx-auto flex min-h-screen w-full max-w-8xl items-end px-5 pb-8 sm:px-8 lg:px-[75px]">
           <div className="text-white">
-            <h1 className="font-[Optima] text-[36px] font-[500] leading-[48px] tracking-[0] text-center capitalize text-white">
-              Contact Us
+            <h1 className="font-[Optima] text-[28px] md:text-[36px] font-[500] md:leading-[48px] leading-[30px] tracking-[0]  capitalize text-white">
+            Current Updates & Highlights
             </h1>
             <div className="mt-0 md:mt-2 flex items-center gap-1 font-[Montserrat] text-[16px] font-medium leading-[100%] tracking-[0] capitalize text-white">
               <Link href="/" className="hover:opacity-80">
                 Home
               </Link>
               <i className="ri-arrow-right-s-line text-base" aria-hidden />
-              <span>Contact us</span>
+              <span>Media</span>
             </div>
           </div>
         </div>
@@ -129,4 +122,4 @@ const ContactNav = () => {
   );
 };
 
-export default ContactNav;
+export default NavMedia;    

@@ -3,11 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import NavSideMenu from "../common/NavSideMenu";
 
 const PHONE = "tel:+919876543210";
-const PHONE_TEXT = "+91 98765 43210";
-const EMAIL = "mailto:info@manshagroup.in";
-const EMAIL_TEXT = "info@manshagroup.in";
 const WHATSAPP = "https://wa.me/919876543210";
 
 const iconBtn =
@@ -16,12 +14,6 @@ const iconBtn =
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [showFixedNav, setShowFixedNav] = useState(false);
-
-  const sidebarLinkClass = `optima-menu-link mobile-nav-item-link block cursor-pointer text-[30px] text-black ${
-    open ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-  }`;
-  const sidebarLabelClass =
-    "transition-colors duration-150 ease-out hover:text-[#652A27]";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -115,112 +107,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      <aside
-        id="mobile-navigation"
-        className={`fixed top-0 right-0 z-50 flex h-screen w-[450px] max-w-[90vw] flex-col bg-white p-8 transition-transform duration-500 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-        aria-label="Main mobile"
-      >
-        <button
-          type="button"
-          onClick={() => setOpen(false)}
-          aria-label="Close sidebar"
-          className="absolute top-5 right-5 inline-flex h-9 w-9 cursor-pointer items-center justify-center text-black transition-opacity hover:opacity-70"
-        >
-          <i className="ri-close-large-line text-[20px]" aria-hidden />
-        </button>
-        <div className="flex justify-center">
-          <Link href="/" onClick={() => setOpen(false)}>
-            <Image
-              src="/mansha-svg/mansha-logo.svg"
-              width={100}
-              height={56}
-              alt="Mansha"
-              className="h-auto w-[100px]"
-            />
-          </Link>
-        </div>
-        <nav className="mt-8" aria-label="Sidebar menu">
-          <ul className="space-y-5 md:space-y-8 pl-2">
-            <li>
-              <Link
-                href="/"
-                onClick={() => setOpen(false)}
-                className={sidebarLinkClass}
-                style={{
-                  transitionDelay: open ? "200ms" : "0ms",
-                }}
-              >
-                <span className={sidebarLabelClass}>Home</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/about-us"
-                onClick={() => setOpen(false)}
-                className={sidebarLinkClass}
-                style={{
-                  transitionDelay: open ? "320ms" : "0ms",
-                }}
-              >
-                <span className={sidebarLabelClass}>About</span>
-              </Link>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => setOpen(false)}
-                className={sidebarLinkClass}
-                style={{
-                  transitionDelay: open ? "440ms" : "0ms",
-                }}
-              >
-                <span className={sidebarLabelClass}>Contact</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => setOpen(false)}
-                className={sidebarLinkClass}
-                style={{
-                  transitionDelay: open ? "560ms" : "0ms",
-                }}
-              >
-                <span className={sidebarLabelClass}> Carrers</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                onClick={() => setOpen(false)}
-                className={sidebarLinkClass}
-                style={{
-                  transitionDelay: open ? "680ms" : "0ms",
-                }}
-              >
-                <span className={sidebarLabelClass}>Blogs</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="mt-auto pt-8 pl-2">
-          <a
-            href={PHONE}
-            className=" optima-menu-link block cursor-pointer text-[22px] font-medium text-black transition-colors hover:text-[#652A27]"
-          >
-            {PHONE_TEXT}
-          </a>
-          <a
-            href={EMAIL}
-            className="optima-menu-link mt-3 block cursor-pointer text-[22px] font-medium text-black transition-colors hover:text-[#652A27]"
-          >
-            {EMAIL_TEXT}
-          </a>
-        </div>
-      </aside>
+      <NavSideMenu open={open} onClose={() => setOpen(false)} />
 
       <style jsx global>{`
         @keyframes navbar-slide-down {
@@ -238,18 +125,6 @@ const Navbar = () => {
           animation: navbar-slide-down 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .optima-menu-link {
-          font-family: Optima, "Segoe UI", Candara, "Noto Sans", sans-serif;
-
-          line-height: 1.2;
-        }
-
-        /* Slide-in uses long easing; color hover matches phone/email (fast, no stagger delay). */
-        .mobile-nav-item-link {
-          transition-property: transform, opacity;
-          transition-duration: 700ms;
-          transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-        }
       `}</style>
     </>
   );
