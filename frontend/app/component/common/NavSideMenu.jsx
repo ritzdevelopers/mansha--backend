@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const PHONE = "tel:+919876543210";
 const PHONE_TEXT = "+91 98765 43210";
@@ -12,12 +12,37 @@ const EMAIL_TEXT = "info@manshagroup.in";
 const NAV_ITEMS = [
   { label: "Home", href: "/", delay: "200ms" },
   { label: "About", href: "/about-us", delay: "320ms" },
-  { label: "Contact", href: "/contact", delay: "440ms" },
-  { label: "Carrers", href: "#", delay: "560ms" },
-  { label: "Blogs", href: "/blog", delay: "680ms" },
+  { label: "Contact", href: "/contact", delay: "560ms" },
+  { label: "Carrers", href: "#", delay: "680ms" },
+  { label: "Blogs", href: "/blog", delay: "800ms" },
+];
+
+const DROPDOWN_NAV = [
+  {
+    id: "residential",
+    label: "Residential",
+    delay: "380ms",
+    items: [
+      { label: "Mansha Heritage", href: "#" },
+      { label: "Mansha Orchid", href: "#" },
+      { label: "Aagman by mansha", href: "#" },
+      { label: "Mansha Oasis", href: "/residential" },
+    ],
+  },
+  {
+    id: "commercial",
+    label: "Commercial",
+    delay: "440ms",
+    items: [{ label: "Mansha vega street", href: "/commerical" }],
+  },
 ];
 
 const NavSideMenu = ({ open, onClose }) => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (id) => {
+    setOpenDropdown((prev) => (prev === id ? null : id));
+  };
   const sidebarLinkClass = `optima-menu-link mobile-nav-item-link block cursor-pointer text-[30px] text-black ${
     open ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
   }`;
@@ -56,7 +81,75 @@ const NavSideMenu = ({ open, onClose }) => {
 
         <nav className="mt-8" aria-label="Sidebar menu">
           <ul className="space-y-5 pl-2 md:space-y-2 ">
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.slice(0, 2).map((item) => (
+              <li key={item.label}>
+                <Link
+                  href={item.href}
+                  onClick={onClose}
+                  className={sidebarLinkClass}
+                  style={{
+                    transitionDelay: open ? item.delay : "0ms",
+                  }}
+                >
+                  <span className={sidebarLabelClass}>{item.label}</span>
+                </Link>
+              </li>
+            ))}
+
+            {DROPDOWN_NAV.map((section) => {
+              const isOpen = openDropdown === section.id;
+              return (
+                <li key={section.id}>
+                  <button
+                    type="button"
+                    onClick={() => toggleDropdown(section.id)}
+                    className={`${sidebarLinkClass} flex w-full items-center justify-between gap-3 text-left`}
+                    style={{
+                      transitionDelay: open ? section.delay : "0ms",
+                    }}
+                    aria-expanded={isOpen}
+                  >
+                    <span className={sidebarLabelClass}>{section.label}</span>
+                    <i
+                      className={`ri-add-line shrink-0 text-[22px] text-black transition-transform duration-500 ease-in-out ${
+                        isOpen ? "rotate-45" : ""
+                      }`}
+                      aria-hidden
+                    />
+                  </button>
+
+                  <div
+                    className={`w-full overflow-hidden transition-all duration-500 ease-in-out ${
+                      isOpen
+                        ? section.id === "residential"
+                          ? "max-h-56 py-3 opacity-100"
+                          : "max-h-24 pt-3 opacity-100"
+                        : "max-h-0 pt-0 opacity-0"
+                    }`}
+                  >
+                    <ul className="space-y-1 border-l border-[#E0E0E0] pl-4">
+                      {section.items.map((sub) => (
+                        <li key={sub.label}>
+                          <Link
+                            href={sub.href}
+                            onClick={onClose}
+                            className={`${sidebarLinkClass} !translate-x-0 !opacity-100`}
+                          >
+                            <span
+                              className={`${sidebarLabelClass} text-[16px] font-normal`}
+                            >
+                              {sub.label}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              );
+            })}
+
+            {NAV_ITEMS.slice(2).map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}

@@ -31,7 +31,8 @@ const faqs = [
   },
 ];
 
-const FAQCommerical = () => {
+const 
+FAQCommerical = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const toggleItem = (index) => {
