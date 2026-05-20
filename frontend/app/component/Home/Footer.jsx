@@ -33,7 +33,7 @@ const Footer = () => {
             <h3 className="font-montserrat text-[16px] font-semibold uppercase leading-[28px] tracking-normal text-[#FFFFFF]">Our Story</h3>
             <ul className="lg:mt-4 mt-0 space-y-0 font-montserrat text-[15px] font-normal leading-[39px] tracking-normal text-[#FFFFFF]">
               <li><Link href="/about-us">About Us</Link></li>
-              <li><Link href="#">Blogs</Link></li>
+              <li><Link href="/blog">Blogs</Link></li>
               <li><Link href="#">FAQ</Link></li>
               <li><Link href="contact">Contact Us</Link></li>
             </ul>

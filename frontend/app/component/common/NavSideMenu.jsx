@@ -14,7 +14,7 @@ const NAV_ITEMS = [
   { label: "About", href: "/about-us", delay: "320ms" },
   { label: "Contact", href: "/contact", delay: "440ms" },
   { label: "Carrers", href: "#", delay: "560ms" },
-  { label: "Blogs", href: "#", delay: "680ms" },
+  { label: "Blogs", href: "/blog", delay: "680ms" },
 ];
 
 const NavSideMenu = ({ open, onClose }) => {
@@ -22,7 +22,7 @@ const NavSideMenu = ({ open, onClose }) => {
     open ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
   }`;
   const sidebarLabelClass =
-    "transition-colors duration-150 ease-out hover:text-[#652A27]";
+    "transition-colors duration-150 ease-out hover:text-[#652A27] text-[18px]";
 
   return (
     <>
@@ -41,7 +41,7 @@ const NavSideMenu = ({ open, onClose }) => {
         >
           <i className="ri-close-large-line text-[20px]" aria-hidden />
         </button>
-
+{/* 
         <div className="flex justify-center">
           <Link href="/" onClick={onClose}>
             <Image
@@ -52,10 +52,10 @@ const NavSideMenu = ({ open, onClose }) => {
               className="h-auto w-[100px]"
             />
           </Link>
-        </div>
+        </div> */}
 
         <nav className="mt-8" aria-label="Sidebar menu">
-          <ul className="space-y-5 pl-2 md:space-y-8">
+          <ul className="space-y-5 pl-2 md:space-y-2 ">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
                 <Link
