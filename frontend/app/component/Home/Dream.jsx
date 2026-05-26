@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Dream = () => {
@@ -52,7 +53,8 @@ const Dream = () => {
 
         <div className="w-full shrink-0 lg:w-[20%] 2xl:w-auto">
         <div className="flex justify-center md:justify-start lg:justify-end 2xl:justify-start">
-        <button className="group relative overflow-hidden inline-flex items-center gap-3 rounded-full border border-[#000000] px-3 py-[9px] font-montserrat text-[14px] lg:text-[10px] xl:text-[14px] font-semibold leading-none capitalize text-[#333333] cursor-pointer transition-all duration-300 hover:text-white focus:outline-none">
+          <Link href="/about-us">
+        <button className="group cursor-pointer relative overflow-hidden inline-flex items-center gap-3 rounded-full border border-[#000000] px-3 py-[9px] font-montserrat text-[14px] lg:text-[10px] xl:text-[14px] font-semibold leading-none capitalize text-[#333333] cursor-pointer transition-all duration-300 hover:text-white focus:outline-none">
 
 {/* Background fill */}
 <span className="absolute left-0 top-0 h-full w-0 bg-[#333333] transition-all duration-500 group-hover:w-full group-focus-visible:w-full"></span>
@@ -68,6 +70,7 @@ const Dream = () => {
 </span>
 
 </button>
+</Link>
 </div>
         </div>
       </div>

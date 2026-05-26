@@ -45,12 +45,12 @@ const Manshagroup = () => {
             <p className="mt-2 xl:mt-4 lg:mt-1 flex-1 font-montserrat xl:text-[16px] lg:text-[14px] text-[14px] font-normal xl:leading-[28px] lg:leading-[20px] md:leading-[21px] md:text-[14px] leading-[20px] tracking-normal text-[#515151]">
             At Mansha Group, luxury is not just about aesthetics — it’s about creating experiences that elevate everyday living. From thoughtfully planned spaces to vibrant communities, every detail is designed to bring comfort, convenience, and a sense of belonging.
 
-              <Link
+              {/* <Link
                 href="#"
                 className="inline font-montserrat text-[16px] font-semibold leading-[28px] tracking-normal text-[#144168] hover:underline"
               >
                 Read More...
-              </Link>
+              </Link> */}
             </p>
           </article>
 
