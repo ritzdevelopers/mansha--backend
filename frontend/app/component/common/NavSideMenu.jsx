@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const PHONE = "tel:+91-8010003838";
 const PHONE_TEXT = "+91-8010003838";
@@ -27,9 +30,9 @@ const ONGOING_RESIDENTIAL = [
 
 const DELIVERED_NAV_PROJECTS = [
   { name: "Aagman by Mansha ", image: "/navslider/aagman.jpg", href: "/aagman-by-mansha" },
-  { name: "Mansha City Palwal", image: "/delieverd/mansha-city-palwal.png", href: "/mansha-city-palwal-2" },
-  { name: "Mansha Royal City", image: "/delieverd/mansha-royal-city.png", href: "/mansha-royal-city" },
-  { name: "Mansha Luxury Floors", image: "/delieverd/mansha-luxury-floor.png", href: "/mansha-luxury-floors" },
+  { name: "Mansha Orchid", image: "/navslider/orchid.jpg", href: "/mansha-orchid" },
+  { name: "Mansha Vega Street", image: "/navslider/vega-street.jpg", href: "/vega-street" },
+  { name: "Mansha Heritage ", image: "/navslider/heritage.jpg", href: "/mansha-heritage" },
 ];
 
 const DROPDOWN_NAV = [
@@ -57,53 +60,42 @@ const DROPDOWN_NAV = [
 ];
 
 const NavProjectSlider = ({ open, onClose }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    if (!open) {
-      setActiveIndex(0);
-      return undefined;
-    }
-
-    const id = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % DELIVERED_NAV_PROJECTS.length);
-    }, 2800);
-
-    return () => window.clearInterval(id);
-  }, [open]);
-
   return (
     <div className="relative mt-8 w-full overflow-hidden">
       <p className="optima-menu-link mb-2 text-center font-montserrat text-[25px] font-medium text-black">
         Projects
       </p>
-      <div
-        className="flex transition-transform duration-700 ease-out"
-        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      <Swiper
+        key={open ? "open" : "closed"}
+        modules={[Autoplay]}
+        loop
+        slidesPerView={1}
+        speed={700}
+        autoplay={{ delay: 2800, disableOnInteraction: false, pauseOnMouseEnter: false }}
+        observer
+        observeParents
+        className="w-full"
       >
         {DELIVERED_NAV_PROJECTS.map((project) => (
-          <Link
-            key={project.href}
-            href={project.href}
-            onClick={onClose}
-            className="w-full shrink-0 cursor-pointer"
-          >
-            <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-md border border-[#E0E0E0] bg-[#FAFAFA]">
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={280}
-                height={120}
-                className="h-auto w-full object-contain"
-                sizes="280px"
-              />
-            </div>
-            <p className="optima-menu-link mt-2 text-center font-montserrat text-[18px] font-normal leading-snug text-black transition-colors hover:text-[#652A27]">
-              {project.name}
-            </p>
-          </Link>
+          <SwiperSlide key={project.href}>
+            <Link href={project.href} onClick={onClose} className="block w-full cursor-pointer">
+              <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-sm border border-[#E0E0E0] bg-[#FAFAFA]">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={280}
+                  height={120}
+                  className="h-auto w-full object-contain"
+                  sizes="280px"
+                />
+              </div>
+              <p className="optima-menu-link mt-2 text-center font-montserrat text-[18px] font-normal leading-snug text-black transition-colors hover:text-[#652A27]">
+                {project.name}
+              </p>
+            </Link>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };
