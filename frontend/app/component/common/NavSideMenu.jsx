@@ -26,17 +26,10 @@ const ONGOING_RESIDENTIAL = [
 ];
 
 const DELIVERED_NAV_PROJECTS = [
-  { name: "Mansha Oaks", image: "/delieverd/mansha.png", href: "/mansha-oaks-4" },
+  { name: "Aagman by Mansha ", image: "/navslider/aagman.jpg", href: "/aagman-by-mansha" },
   { name: "Mansha City Palwal", image: "/delieverd/mansha-city-palwal.png", href: "/mansha-city-palwal-2" },
   { name: "Mansha Royal City", image: "/delieverd/mansha-royal-city.png", href: "/mansha-royal-city" },
   { name: "Mansha Luxury Floors", image: "/delieverd/mansha-luxury-floor.png", href: "/mansha-luxury-floors" },
-  { name: "Eden SLF City", image: "/delieverd/eden-city.png", href: "/eden-slf-city" },
-  { name: "Mansha Indraprastha Greens", image: "/delieverd/mansha-indr-green.png", href: "/indraprastha-greens" },
-  { name: "Mansha Estate", image: "/delieverd/mansha-estate.png", href: "/mansha-estate" },
-  { name: "Mansha Floors", image: "/delieverd/mansha-floor.png", href: "/mansha-floors-2" },
-  { name: "Mansha Model Town", image: "/delieverd/mansha-model-town.png", href: "/mansha-model-town" },
-  { name: "Mansha Residency", image: "/delieverd/mansha-residence.png", href: "/mansha-residency" },
-  { name: "Mansha Greens", image: "/delieverd/Logos-For-Website-11.png", href: "/mansha-greens-2" },
 ];
 
 const DROPDOWN_NAV = [
@@ -158,9 +151,9 @@ const NavSideMenu = ({ open, onClose }) => {
           <i className="ri-close-large-line text-[20px]" aria-hidden />
         </button>
 
-        <div className="nav-menu-scroll mt-8 min-h-0 flex-1 overflow-y-auto overscroll-y-contain [-webkit-overflow-scrolling:touch]">
+        <div className="nav-menu-scroll mt-2 min-h-0 flex-1 overflow-y-auto overscroll-y-contain [-webkit-overflow-scrolling:touch] md:mt-8">
         <nav aria-label="Sidebar menu">
-          <ul className="space-y-1.5 pl-2 md:space-y-1.5">
+          <ul className="space-y-3 pl-2 md:space-y-1.5">
             {NAV_ITEMS.slice(0, 2).map((item) => (
               <li key={item.label}>
                 <Link
