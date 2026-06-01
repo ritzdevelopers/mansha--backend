@@ -70,11 +70,11 @@ const Section2 = () => {
             <div className="xl:mt-12 mt-7 grid grid-cols-1 xl:gap-5 lg:gap-0 gap-3 sm:grid-cols-2">
               <div className="flex items-center xl:gap-5 lg:gap-2 gap-3">
                 <Image
-                  src="/mansha-svg/Forest-Themed-1.svg"
+                  src="/aagman/kids-play-area.png"
                   alt="Forest themed icon"
                   width={60}
                   height={60}
-                  className="h-[50px] w-[50px] object-contain xl:h-15 xl:w-15"
+                  className="h-[50px] w-[50px] object-contain xl:h-20 xl:w-20"
                 />
                 <p className="font-montserrat xl:text-[16px] text-[14px] font-normal leading-[24px] capitalize text-[#333333]">
                 Kids play area 
@@ -83,11 +83,11 @@ const Section2 = () => {
 
               <div className="flex items-center xl:gap-5 lg:gap-2 gap-3">
                 <Image
-                  src="/mansha-svg/Forest-Themed-1.svg"
+                  src="/aagman/open-gym-area.png"
                   alt="Forest themed icon"
                   width={60 }
                   height={60}
-                  className="h-[50px] w-[50px] object-contain xl:h-15 xl:w-15"
+                  className="h-[50px] w-[50px] object-contain xl:h-20 xl:w-20"
                 />
                 <p className="font-montserrat xl:text-[16px] text-[14px] font-normal leading-[24px] capitalize text-[#333333]">
                 Open gym area 
@@ -127,7 +127,7 @@ const Section2 = () => {
           </div>
 
           <div className="relative xl:mt-22 lg:mt-10 md:mt-3 mt-0">
-            <div className="relative h-[350px] w-full overflow-hidden md:h-[570px]">
+            <div className="relative h-[300px] w-full overflow-hidden md:h-[570px] lg:h-[420px] xl:h-[570px]">
               <div
                 className="flex h-full duration-700 ease-out"
                 style={{

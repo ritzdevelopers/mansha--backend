@@ -59,11 +59,11 @@ const Section2 = () => {
             <div className="xl:mt-12 mt-7 grid grid-cols-1 xl:gap-5 lg:gap-0 gap-3 sm:grid-cols-2">
               <div className="flex items-center xl:gap-5 lg:gap-2 gap-3">
                 <Image
-                  src="/oasis/3-tier-security.png"
+                  src="/oasis/gated-comunity.png"
                   alt="Forest themed icon"
                   width={60}
                   height={60}
-                  className="h-[50px] w-[50px] object-contain xl:h-15 xl:w-15"
+                  className="h-[50px] w-[50px] object-contain xl:h-20 xl:w-20"
                 />
                 <p className="font-montserrat xl:text-[16px] text-[14px] font-normal leading-[24px] capitalize text-[#333333]">
                 Gated community
@@ -72,11 +72,11 @@ const Section2 = () => {
 
               <div className="flex items-center xl:gap-5 lg:gap-2 gap-3">
                 <Image
-                  src="/oasis/comunity.png"
+                  src="/oasis/3-tier-security.png"
                   alt="Forest themed icon"
                   width={60 }
                   height={60}
-                  className="h-[50px] w-[50px] object-contain xl:h-15 xl:w-15"
+                  className="h-[50px] w-[50px] object-contain xl:h-20 xl:w-20"
                 />
                 <p className="font-montserrat xl:text-[16px] text-[14px] font-normal leading-[24px] capitalize text-[#333333]">
                 3-Tier security

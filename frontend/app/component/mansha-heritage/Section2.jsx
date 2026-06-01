@@ -59,7 +59,7 @@ const Section2 = () => {
             <div className="xl:mt-12 mt-7 grid grid-cols-1 xl:gap-5 lg:gap-0 gap-3 sm:grid-cols-2">
               <div className="flex items-center xl:gap-5 lg:gap-2 gap-3">
                 <Image
-                  src="/heritage/happy.png"
+                  src="/heritage/happy-customers.png"
                   alt="Forest themed icon"
                   width={60}
                   height={60}
@@ -72,7 +72,7 @@ const Section2 = () => {
 
               <div className="flex items-center xl:gap-5 lg:gap-2 gap-3">
                 <Image
-                  src="/heritage/connected.png"
+                  src="/heritage/well-conected.png"
                   alt="Forest themed icon"
                   width={60 }
                   height={60}
