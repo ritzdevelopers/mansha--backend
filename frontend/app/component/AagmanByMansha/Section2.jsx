@@ -5,9 +5,9 @@ import React, { useEffect, useState } from "react";
 import BookASite from "../common/Book-a-site";
 
 const RESIDENTIAL_SLIDES = [
-  "/mansha-image/residential-sldier-1.jpg",
-  "/mansha-image/residential-slider-2.jpg",
-  "/mansha-image/residentail-slider-3.jpg",
+  "/aagman/girl.jpg",
+  "/aagman/gym-girl.jpg",
+  "/aagman/road.jpg",
 ];
 
 const Section2 = () => {
