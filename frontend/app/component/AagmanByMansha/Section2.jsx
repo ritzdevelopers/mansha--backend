@@ -65,7 +65,7 @@ const Section2 = () => {
                   className="h-[50px] w-[50px] object-contain xl:h-15 xl:w-15"
                 />
                 <p className="font-montserrat xl:text-[16px] text-[14px] font-normal leading-[24px] capitalize text-[#333333]">
-                2400+ happy customers
+                Kids play area 
                 </p>
               </div>
 
@@ -78,7 +78,7 @@ const Section2 = () => {
                   className="h-[50px] w-[50px] object-contain xl:h-15 xl:w-15"
                 />
                 <p className="font-montserrat xl:text-[16px] text-[14px] font-normal leading-[24px] capitalize text-[#333333]">
-                Well connected
+                Open gym area 
                 </p>
               </div>
             </div>
