@@ -68,7 +68,7 @@ export default function TestimoniaCommon() {
               </div> */}
             </div>
 
-            <div className="relative z-10 w-full lg:ml-19 lg:pt-14">
+            <div className="relative z-10 w-full xl:-translate-x-[50px] lg:ml-19 lg:pt-14">
               <Swiper
                 className="[&_.swiper-wrapper]:items-stretch"
                 modules={[Autoplay]}
@@ -82,7 +82,7 @@ export default function TestimoniaCommon() {
                 breakpoints={{
                   640: { slidesPerView: 1, spaceBetween: 12 },
                   768: { slidesPerView: 2, spaceBetween: 16 },
-                  1024: { slidesPerView: 2, spaceBetween: 20 },
+                  1024: { slidesPerView: 1, spaceBetween: 20 },
                   1280: { slidesPerView: 2, spaceBetween: 25 },
                 }}
               >
@@ -91,7 +91,7 @@ export default function TestimoniaCommon() {
                     key={`${item.name}-${index}`}
                     className="!box-border p-2"
                   >
-                    <div className="relative mx-auto h-[360px] w-full overflow-hidden border border-[#E7E7E7] shadow-[0px_2px_15px_0px_#D0D0D040] lg:mx-0">
+                    <div className="relative mx-auto h-[360px] w-full overflow-hidden border border-[#E7E7E7] shadow-[0px_2px_15px_0px_#D0D0D040] lg:mx-0 lg:w-[calc(100%-70px)] xl:w-full">
                       <Image
                         src={item.image}
                         alt={item.name}

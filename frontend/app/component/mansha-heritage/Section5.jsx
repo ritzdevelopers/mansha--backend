@@ -99,9 +99,9 @@ const Section5 = () => {
                   <Image
                     src={item.icon}
                     alt={item.label}
-                    width={52}
-                    height={52}
-                    className="h-[38px] w-[38px] object-contain md:h-[42px] md:w-[42px] lg:h-[52px] lg:w-[52px] xl:h-[80px] xl:w-[80px]"
+                    width={62}
+                    height={62}
+                    className="h-[48px] w-[48px] object-contain md:h-[52px] md:w-[52px] lg:h-[62px] lg:w-[62px] xl:h-[90px] xl:w-[90px]"
                   />
                   <p className="mt-2 text-center font-optima text-[13px] font-[500] leading-[100%] capitalize text-[#000000] md:mt-3 md:text-[14px] lg:text-[16px]">
                     {item.label}
