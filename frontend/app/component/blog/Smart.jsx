@@ -1,30 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
+import { BLOG_POSTS } from "./blogPosts";
 
-const SLIDER_CARDS = [
-  {
-    id: 1,
-    date: "Jan 6, 2026",
-    title:
-      "The Benefits of Owning a Commercial Property  in Faridabad (2026 Investment Guide)",
-    image: "/blog/slider-1.jpg",
-    description: [
-      "The real estate game has changed significantly",
-      "And the smart investors are not interested in homes",
-      "But interested in commercial property in Faridabad.",
-    ],
-  },
-  {
-    id: 2,
-    date: "Jan 6, 2026",
-    title: "How to Choose the Right Real Estate Developer? (2026 Investment Guide)",
-    image: "/blog/slider-1.jpg",
-    descriptionLead:
-      "Buying a home or investing in a plot is one of the most important financial decisions of your life. You work hard, save diligently",
-    descriptionBody:
-      "and when the moment finally comes to put your money into real estate the single biggest factor standing between a great investment and a regrettable one is the developer you choose.",
-  },
-];
+const SLIDER_CARDS = BLOG_POSTS;
 
 const Smart = () => {
   return (
@@ -51,9 +30,9 @@ const Smart = () => {
           {[...SLIDER_CARDS, ...SLIDER_CARDS].map((card, index) => (
             <article
               key={`${card.id}-${index}`}
-              className="grid w-[940px] shrink-0 grid-cols-[1fr_0.9fr] gap-5 overflow-hidden rounded-xl border border-[#E6E6E6] bg-white p-2.5 max-lg:w-[740px] max-md:w-[85vw] max-md:grid-cols-1"
+              className="grid w-[940px] shrink-0 grid-cols-[1fr_0.9fr] items-center gap-5 overflow-hidden rounded-xl border border-[#E6E6E6] bg-white p-2.5 max-lg:w-[740px] max-md:w-[85vw] max-md:items-stretch max-md:grid-cols-1"
             >
-              <div className="relative min-h-[160px] overflow-hidden rounded-lg sm:min-h-[180px] md:min-h-[190px] lg:min-h-[220px]">
+              <div className="relative min-h-[160px] overflow-hidden rounded-lg sm:min-h-[180px] md:min-h-[190px] lg:min-h-[250px]">
                 <Image
                   src={card.image}
                   alt="Property event"
@@ -63,7 +42,7 @@ const Smart = () => {
                 />
               </div>
 
-              <div className="flex min-w-0 flex-col self-start py-1 md:py-0 max-md:px-2 md:pl-0 md:pr-6">
+              <div className="flex h-full min-w-0 flex-col justify-center py-1 max-md:px-2 md:py-0 md:pl-0 md:pr-6">
                 <p className="font-montserrat text-[15px] font-semibold capitalize leading-[24px] tracking-normal text-[#00000066]">
                   {card.date}
                 </p>
@@ -72,9 +51,25 @@ const Smart = () => {
                 </h3>
                 {Array.isArray(card.description) ? (
                   <ul className="mt-1.5 md:mt-2 list-disc space-y-0.5 pl-5 font-montserrat text-[14px] font-normal capitalize leading-[20px] tracking-normal text-[#151515]">
-                    {card.description.map((point, pointIndex) => (
-                      <li key={pointIndex}>{point}</li>
-                    ))}
+                    {card.description.map((point, pointIndex) =>
+                      typeof point === "object" && point?.lead ? (
+                        <li
+                          key={pointIndex}
+                          className="line-clamp-1 min-w-0 max-w-[350px] overflow-hidden"
+                        >
+                          {point.lead}
+                          <span aria-hidden="true">...</span>
+                          <span className="sr-only"> {point.body}</span>
+                        </li>
+                      ) : (
+                        <li
+                          key={pointIndex}
+                          className="line-clamp-1 min-w-0 max-w-[350px] overflow-hidden"
+                        >
+                          {point}
+                        </li>
+                      )
+                    )}
                   </ul>
                 ) : null}
                 {card.descriptionLead ? (
@@ -84,13 +79,13 @@ const Smart = () => {
                     <span className="sr-only">{card.descriptionBody}</span>
                   </p>
                 ) : null}
-                <a
-                  href="#"
+                <Link
+                  href={`/blog/${card.slug}`}
                   className="mt-3 md:mt-4 inline-flex w-fit items-center gap-1 font-montserrat text-[14px] font-medium capitalize leading-[100%] tracking-normal text-[#652A27]"
                 >
                   Read More
                   <i className="ri-arrow-right-line text-[22px]" aria-hidden />
-                </a>
+                </Link>
               </div>
             </article>
           ))}
