@@ -158,7 +158,7 @@ const Section1 = () => {
         </header>
 
         <div className="mx-auto max-w-[1525px] px-5 sm:px-8 lg:px-[70px]">
-          <div className="rounded-[20px] mt-5 border border-[#E8E4DC] bg-[#F9F8F3] px-4 py-10 text-center sm:px-8 sm:py-12 lg:py-14">
+          <div className="rounded-[20px] mt-5  bg-[#F9F8F3] px-4 py-10 text-center sm:px-8 sm:py-12 lg:py-14">
             <p className="font-montserrat text-[11px] font-medium uppercase tracking-[0.22em] text-[#888888] sm:text-[12px]">
               Mansha Group
             </p>
