@@ -2,10 +2,10 @@ import Image from "next/image";
 import React from "react";
 
 const SECTION_TEXT =
-  "To create thoughtfully designed residential and commercial spaces that combine quality, innovation, and modern living while ensuring timely delivery and complete customer satisfaction.  With a commitment to excellence and trust, we aim to build communities that enhance lifestyles and inspire future growth.";
+  "Our goal is to design homes and offices that're both beautiful and functional. We want to bring high quality, new ideas and modern living in a way that feels smooth and natural. We promise to deliver projects on time make our customers happy and build communities that make peoples daily lives better. We want to create places where people can have experiences and feel like they belong. Our aim is to earn the trust of our residents, partners and stakeholders by delivering projects that show excellence and provide long-term value.";
 
   const Vision_TEXT =
-  "To be recognized as a trusted and progressive real estate brand that transforms ideas into landmark developments built on integrity, sustainability, and lasting value. We envision shaping modern communities that reflect comfort, elegance, and a better way of living for generations to come.";
+  "We want to be a real estate brand that people trust and respect. We aim to create developments that are built on honesty, sustainability and lasting value. Our goal is to build communities that're comfortable, elegant and well-designed. We want to offer a way of living that inspires people to live their best lives. We care about the environment. Want to create places that are not only beautiful but also good for the planet. We want to make an impact, on the cities and communities we work in and create a better future for everyone.";
 const Misson = () => {
   return (
     <section className="w-full bg-white py-[35px] sm:py-12 lg:py-[70px]">
@@ -26,13 +26,13 @@ const Misson = () => {
             />
           </div>
 
-          <p className="font-montserrat text-[16px] font-normal leading-[25px]md:leading-[29px] text-center md:text-left tracking-[0px] capitalize text-[#333333] lg:self-end max-w-[580px]">
+          <p className="font-montserrat text-[16px] font-normal leading-[25px] md:leading-[29px] text-center md:text-left tracking-[0px] capitalize text-[#333333] lg:self-end max-w-[580px]">
             {SECTION_TEXT}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-5 border border-[#DDDDDD] p-4 md:gap-6 md:p-6 lg:grid-cols-[398px_1fr] lg:items-start lg:gap-y-6 lg:gap-x-15 lg:p-8 xl:grid-cols-[1fr_398px_auto]">
-          <p className="order-3 font-montserrat text-[16px] font-normal leading-[25px]md:leading-[29px] tracking-[0px] capitalize text-[#333333] lg:order-3 text-center md:text-left lg:self-end max-w-[600px] xl:order-1">
+          <p className="order-3 font-montserrat text-[16px] font-normal leading-[25px]    md:leading-[29px] tracking-[0px] capitalize text-[#333333] lg:order-3 text-center md:text-left lg:self-end max-w-[600px] xl:order-1">
             {Vision_TEXT}
           </p>
 
