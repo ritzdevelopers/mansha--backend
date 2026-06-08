@@ -82,6 +82,7 @@ const NavProjectSlider = ({ open, onClose }) => {
                 <Image
                   src={project.image}
                   alt={project.name}
+                  title={project.name}
                   width={280}
                   height={120}
                   className="h-auto w-full object-contain"
