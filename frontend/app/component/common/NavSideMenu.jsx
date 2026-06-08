@@ -295,6 +295,7 @@ const NavSideMenu = ({ open, onClose }) => {
                 >
                   <span className={sidebarLabelClass}>{NAV_ITEMS[4].label}</span>
                 </Link>
+                <div className="mt-3 h-px w-full bg-black/10" aria-hidden />
               </li>
 
               <li
