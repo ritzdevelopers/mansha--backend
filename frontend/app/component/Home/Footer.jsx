@@ -71,19 +71,31 @@ const Footer = () => {
             </div>  
             <div className="mt-5 flex items-center gap-3 text-[#652A27]">
   {[
-    "ri-facebook-fill",
-    "ri-twitter-x-line",
-    "ri-linkedin-fill",
-    "ri-instagram-line",
-    "ri-youtube-line",
-  ].map((icon) => (
-    <span
-      key={icon}
-      className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-white text-[16px]  transition-all duration-300 hover:bg-[#652A27] hover:text-white hover:shadow-white/40"
-    >
-      <i className={icon} />
-    </span>
-  ))}
+    { icon: "ri-facebook-fill", href: "https://www.facebook.com/manshagroupfaridabad" },
+    // { icon: "ri-twitter-x-line" },
+    { icon: "ri-linkedin-fill", href: "https://www.linkedin.com/in/mansha-group-a80379212/" },
+    { icon: "ri-instagram-line", href: "https://www.instagram.com/manshagroupofficial/" },
+    // { icon: "ri-youtube-line" },
+  ].map(({ icon, href }) => {
+    const className =
+      "flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-white text-[16px]  transition-all duration-300 hover:bg-[#652A27] hover:text-white hover:shadow-white/40";
+
+    return href ? (
+      <a
+        key={icon}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        <i className={icon} />
+      </a>
+    ) : (
+      <span key={icon} className={className}>
+        <i className={icon} />
+      </span>
+    );
+  })}
 </div>
           </div>
         </div>

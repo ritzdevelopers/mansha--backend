@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import BookASite from "../common/Book-a-site";
+import DownloadBrochure from "../common/Download-brochure";
 
 const RESIDENTIAL_SLIDES = [
   "/orchid/orchird-girl.jpg",
@@ -14,6 +15,7 @@ const Section2 = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [bookSiteOpen, setBookSiteOpen] = useState(false);
+  const [brochureOpen, setBrochureOpen] = useState(false);
   const sliderSlides = [...RESIDENTIAL_SLIDES, RESIDENTIAL_SLIDES[0]];
 
   useEffect(() => {
@@ -102,6 +104,7 @@ const Section2 = () => {
               </button>
               <button
                 type="button"
+                onClick={() => setBrochureOpen(true)}
                 className="group relative isolate inline-flex cursor-pointer items-center gap-2 overflow-hidden rounded-full border border-[#652A27] bg-transparent px-6 py-3 font-montserrat text-[16px] font-normal leading-[100%] text-[#652A27]"
               >
                 <span
@@ -161,6 +164,13 @@ const Section2 = () => {
       </div>
 
       <BookASite open={bookSiteOpen} onClose={() => setBookSiteOpen(false)} />
+      <DownloadBrochure
+        open={brochureOpen}
+        onClose={() => setBrochureOpen(false)}
+        projectName="Mansha Orchid"
+        brochurePath="/MANSHA-ORCHID-BROCHURE.pdf"
+        brochureFileName="Mansha-Orchid-Brochure.pdf"
+      />
     </section>
   );
 };

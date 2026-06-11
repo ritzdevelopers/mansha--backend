@@ -18,6 +18,7 @@ const menuItems = [
   { id: "enquire", label: "Enquire Forms", icon: "ri-questionnaire-line" },
   { id: "contact", label: "Contact Forms", icon: "ri-mail-line" },
   { id: "career", label: "Career Forms", icon: "ri-briefcase-line" },
+  { id: "brochure", label: "Brochure Forms", icon: "ri-file-download-line" },
   { id: "profile", label: "My Profile", icon: "ri-user-line" },
 ];
 
@@ -97,6 +98,7 @@ export default function SuperAdminPanel({ role = "superadmin" }) {
   const [enquireData, setEnquireData] = useState([]);
   const [contactData, setContactData] = useState([]);
   const [careerData, setCareerData] = useState([]);
+  const [brochureData, setBrochureData] = useState([]);
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState(null);
@@ -137,6 +139,11 @@ export default function SuperAdminPanel({ role = "superadmin" }) {
       if (menuId === "career") {
         const data = await adminApi.getCareerData();
         setCareerData(data.user || []);
+      }
+
+      if (menuId === "brochure") {
+        const data = await adminApi.getBrochureData();
+        setBrochureData(data.user || []);
       }
 
       if (menuId === "profile") {
@@ -429,6 +436,29 @@ export default function SuperAdminPanel({ role = "superadmin" }) {
     </section>
   );
 
+  const renderBrochure = () => (
+    <section className="rounded-2xl border border-[#DDDDDD] bg-white p-5 md:p-6">
+      <h2 className="font-optima text-[22px] font-medium text-[#111111] md:text-[26px]">
+        Brochure Form Data
+      </h2>
+      <DataTable
+        emptyText="No brochure form submissions yet"
+        rows={brochureData}
+        columns={[
+          { key: "name", label: "Name" },
+          { key: "email", label: "Email" },
+          { key: "phone", label: "Phone" },
+          { key: "project", label: "Project" },
+          {
+            key: "createdAt",
+            label: "Submitted",
+            render: (row) => formatDate(row.createdAt),
+          },
+        ]}
+      />
+    </section>
+  );
+
   const renderProfile = () => (
     <section className="rounded-2xl border border-[#DDDDDD] bg-white p-5 md:p-6">
       <h2 className="font-optima text-[22px] font-medium text-[#111111] md:text-[26px]">
@@ -488,6 +518,7 @@ export default function SuperAdminPanel({ role = "superadmin" }) {
     if (activeMenu === "enquire") return renderEnquire();
     if (activeMenu === "contact") return renderContact();
     if (activeMenu === "career") return renderCareer();
+    if (activeMenu === "brochure") return renderBrochure();
     if (activeMenu === "profile") return renderProfile();
     return null;
   };

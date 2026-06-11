@@ -110,7 +110,7 @@ const Section2 = () => {
                   <i className="ri-arrow-right-line transition-all duration-300 group-hover:translate-x-1.5 group-hover:text-[#652A27]" />
                 </span>
               </button>
-              <button
+              {/* <button
                 type="button"
                 className="group relative isolate inline-flex cursor-pointer items-center gap-2 overflow-hidden rounded-full border border-[#652A27] bg-transparent px-6 py-3 font-montserrat text-[16px] font-normal leading-[100%] text-[#652A27]"
               >
@@ -122,7 +122,7 @@ const Section2 = () => {
                   Download Brochure{" "}
                   <i className="ri-arrow-right-line transition-all duration-300 group-hover:translate-x-1.5" />
                 </span>
-              </button>
+              </button> */}
             </div>
           </div>
 

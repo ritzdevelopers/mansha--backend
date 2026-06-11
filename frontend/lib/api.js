@@ -44,6 +44,11 @@ export const submitContactData = async (body) => {
   return data;
 };
 
+export const submitBrochureData = async (body) => {
+  const { data } = await axiosInstance.post("/brochure-data", body);
+  return data;
+};
+
 export const submitCareerApplication = async (formData) => {
   const { data } = await axiosInstance.post("/career", formData, {
     headers: {
@@ -121,6 +126,11 @@ export const adminApi = {
 
   getCareerData: async () => {
     const { data } = await axiosInstance.get("/get-career-data");
+    return data;
+  },
+
+  getBrochureData: async () => {
+    const { data } = await axiosInstance.get("/get-brochure-data");
     return data;
   },
 };
